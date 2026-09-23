@@ -1,0 +1,317 @@
+/* ================================================================
+   FAQ.CSS — Perguntas Frequentes Michelle Milan Eventos
+   ----------------------------------------------------------------
+   Conteúdo:
+   1. Seção FAQ
+   2. Lista de Items (<details>/<summary>)
+   3. Pergunta (summary) — Estado Fechado
+   4. Ícone animado (+/×)
+   5. Resposta — Estado Aberto
+   6. Animação de abertura
+   7. CTA final do FAQ
+   8. Responsive
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   1. SEÇÃO FAQ
+   ---------------------------------------------------------------- */
+.section-faq {
+  position: relative;
+  background: var(--color-dark-mid);
+  padding-block: var(--space-20);
+  overflow: hidden;
+}
+
+/* Ornamento de fundo — linhas diagonais douradas */
+.section-faq::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 420px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    -55deg,
+    transparent,
+    transparent 40px,
+    rgba(201, 168, 76, 0.018) 40px,
+    rgba(201, 168, 76, 0.018) 41px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Círculo difuso no canto esquerdo */
+.section-faq::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.04) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-faq .container {
+  position: relative;
+  z-index: 1;
+  max-width: 760px; /* FAQ mais estreito para melhor leitura */
+}
+
+/* ----------------------------------------------------------------
+   2. LISTA DE ITEMS
+   ---------------------------------------------------------------- */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: var(--space-16);
+}
+
+/* ----------------------------------------------------------------
+   3. ITEM DO FAQ (<details>)
+   ---------------------------------------------------------------- */
+.faq-item {
+  border-bottom: 1px solid var(--color-dark-border);
+  position: relative;
+
+  /* Remove o triângulo padrão do navegador */
+  list-style: none;
+}
+
+.faq-item:first-child {
+  border-top: 1px solid var(--color-dark-border);
+}
+
+/* Remove marker padrão em todos os browsers */
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item > summary {
+  list-style: none;
+}
+
+/* Linha dourada que desce ao abrir */
+.faq-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--gradient-gold);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform var(--transition-luxury);
+  border-radius: var(--radius-full);
+}
+
+.faq-item[open]::before {
+  transform: scaleY(1);
+}
+
+/* ----------------------------------------------------------------
+   4. PERGUNTA — <summary>
+   ---------------------------------------------------------------- */
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding: var(--space-6) var(--space-5);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background-color var(--transition-base), padding-left var(--transition-luxury);
+  border-radius: var(--radius-sm);
+}
+
+.faq-question:hover {
+  background: rgba(201, 168, 76, 0.04);
+  padding-left: var(--space-6);
+}
+
+.faq-item[open] .faq-question {
+  padding-left: var(--space-6);
+  background: rgba(201, 168, 76, 0.05);
+}
+
+/* Texto da pergunta */
+.faq-question > span:first-child {
+  font-family: var(--font-serif);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-regular);
+  color: var(--color-text-primary);
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  transition: color var(--transition-base);
+  flex: 1;
+}
+
+.faq-question:hover > span:first-child,
+.faq-item[open] .faq-question > span:first-child {
+  color: var(--color-gold-light);
+}
+
+/* ----------------------------------------------------------------
+   5. ÍCONE ANIMADO (+/×)
+   ---------------------------------------------------------------- */
+.faq-icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Barra horizontal */
+.faq-icon::before,
+.faq-icon::after {
+  content: '';
+  position: absolute;
+  background: var(--color-gold);
+  border-radius: var(--radius-full);
+  transition:
+    transform var(--transition-luxury),
+    opacity var(--transition-base);
+}
+
+/* Horizontal */
+.faq-icon::before {
+  width: 16px;
+  height: 1px;
+}
+
+/* Vertical */
+.faq-icon::after {
+  width: 1px;
+  height: 16px;
+}
+
+/* Estado aberto: transforma em × */
+.faq-item[open] .faq-icon::before {
+  transform: rotate(45deg);
+}
+
+.faq-item[open] .faq-icon::after {
+  transform: rotate(45deg);
+}
+
+/* ----------------------------------------------------------------
+   6. RESPOSTA — .faq-answer
+   ---------------------------------------------------------------- */
+.faq-answer {
+  padding: 0 var(--space-5) var(--space-6) var(--space-6);
+  overflow: hidden;
+
+  /* Animação de abertura via animação CSS */
+  animation: faqSlideDown 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.faq-answer p {
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-light);
+  color: var(--color-text-secondary);
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+  max-width: 680px;
+}
+
+.faq-answer p strong {
+  color: var(--color-gold-light);
+  font-weight: var(--fw-medium);
+}
+
+/* ----------------------------------------------------------------
+   7. ANIMAÇÃO DE ABERTURA
+   ---------------------------------------------------------------- */
+@keyframes faqSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ----------------------------------------------------------------
+   8. CTA FINAL DO FAQ
+   ---------------------------------------------------------------- */
+.faq-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  text-align: center;
+
+  /* Separador visual */
+  border-top: 1px solid var(--color-dark-border);
+  padding-top: var(--space-12);
+  margin-top: var(--space-4);
+}
+
+.faq-cta > p {
+  font-family: var(--font-serif);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-light);
+  font-style: italic;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.02em;
+}
+
+/* ----------------------------------------------------------------
+   9. RESPONSIVE
+   ---------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .section-faq {
+    padding-block: var(--space-24);
+  }
+
+  .faq-question {
+    padding: var(--space-7) var(--space-6);
+  }
+
+  .faq-question > span:first-child {
+    font-size: var(--fs-xl);
+  }
+
+  .faq-answer {
+    padding: 0 var(--space-6) var(--space-8) var(--space-8);
+  }
+
+  .faq-answer p {
+    font-size: var(--fs-base);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-faq {
+    padding-block: var(--space-32);
+  }
+
+  /* No desktop o container já tem max-width: 760px, mantém centralizado */
+  .section-faq .container {
+    margin-inline: auto;
+  }
+
+  .faq-question:hover {
+    padding-left: var(--space-8);
+  }
+
+  .faq-item[open] .faq-question {
+    padding-left: var(--space-8);
+  }
+
+  .faq-answer {
+    padding: 0 var(--space-8) var(--space-8) var(--space-8);
+  }
+}

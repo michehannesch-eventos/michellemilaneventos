@@ -1,0 +1,225 @@
+/* ================================================================
+   FLOATING-WPP.CSS — Botão Flutuante WhatsApp
+   ----------------------------------------------------------------
+   Conteúdo:
+   1. Botão Flutuante Base (position: fixed)
+   2. Ícone SVG
+   3. Tooltip
+   4. Animação Pulse
+   5. Estados: hover, focus, entrada
+   6. Responsive
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   1. BOTÃO FLUTUANTE BASE
+   ---------------------------------------------------------------- */
+.floating-wpp {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  z-index: var(--z-float);
+
+  /* Dimensões */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+
+  /* Visual */
+  background: linear-gradient(135deg, #25d366 0%, #1ebe5c 60%, #128c3e 100%);
+  color: #ffffff;
+
+  /* Layout interno */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Sombra */
+  box-shadow:
+    0 4px 20px rgba(37, 211, 102, 0.40),
+    0 2px 8px rgba(0, 0, 0, 0.30);
+
+  /* Transições */
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    filter var(--transition-base);
+
+  /* Pulse contínuo */
+  animation: wppPulse 2.8s ease-in-out infinite;
+
+  /* Acessibilidade */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ----------------------------------------------------------------
+   2. ÍCONE SVG
+   ---------------------------------------------------------------- */
+.floating-wpp-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  display: block;
+  position: relative;
+  z-index: 1;
+  transition: transform var(--transition-base);
+}
+
+/* ----------------------------------------------------------------
+   3. TOOLTIP "Fale comigo!"
+   ---------------------------------------------------------------- */
+.floating-wpp-tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+
+  /* Visual */
+  background: var(--color-dark-soft);
+  color: var(--color-text-primary);
+  border: 1px solid rgba(201, 168, 76, 0.20);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-4);
+  white-space: nowrap;
+  box-shadow: var(--shadow-dark-sm);
+
+  /* Tipografia */
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.06em;
+
+  /* Estado inicial: oculto */
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-base);
+}
+
+/* Seta (triângulo) apontando para a direita */
+.floating-wpp-tooltip::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 6px solid var(--color-dark-soft);
+}
+
+/* ----------------------------------------------------------------
+   4. ESTADOS — HOVER & FOCUS
+   ---------------------------------------------------------------- */
+.floating-wpp:hover,
+.floating-wpp:focus-visible {
+  transform: scale(1.10) translateY(-3px);
+  box-shadow:
+    0 8px 32px rgba(37, 211, 102, 0.50),
+    0 4px 12px rgba(0, 0, 0, 0.30);
+  filter: brightness(1.08);
+  animation-play-state: paused; /* Para o pulse ao hover */
+}
+
+.floating-wpp:hover .floating-wpp-icon,
+.floating-wpp:focus-visible .floating-wpp-icon {
+  transform: scale(1.08) rotate(-8deg);
+}
+
+/* Exibe tooltip no hover */
+.floating-wpp:hover .floating-wpp-tooltip,
+.floating-wpp:focus-visible .floating-wpp-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.floating-wpp:active {
+  transform: scale(0.96);
+  box-shadow:
+    0 2px 10px rgba(37, 211, 102, 0.30),
+    0 1px 4px rgba(0, 0, 0, 0.20);
+}
+
+/* ----------------------------------------------------------------
+   5. ANIMAÇÃO PULSE
+   ---------------------------------------------------------------- */
+@keyframes wppPulse {
+  0% {
+    box-shadow:
+      0 4px 20px rgba(37, 211, 102, 0.40),
+      0 2px 8px rgba(0, 0, 0, 0.30),
+      0 0 0 0 rgba(37, 211, 102, 0.50);
+  }
+  50% {
+    box-shadow:
+      0 4px 20px rgba(37, 211, 102, 0.40),
+      0 2px 8px rgba(0, 0, 0, 0.30),
+      0 0 0 14px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow:
+      0 4px 20px rgba(37, 211, 102, 0.40),
+      0 2px 8px rgba(0, 0, 0, 0.30),
+      0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* Animação de entrada: sobe do canto inferior */
+@keyframes wppSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.floating-wpp {
+  animation:
+    wppSlideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 1.5s both,
+    wppPulse 2.8s ease-in-out 2.5s infinite;
+}
+
+/* ----------------------------------------------------------------
+   6. RESPONSIVE
+   ---------------------------------------------------------------- */
+
+/* Mobile: um pouco menor para não sobrepor conteúdo */
+@media (max-width: 639px) {
+  .floating-wpp {
+    width: 54px;
+    height: 54px;
+    bottom: var(--space-5);
+    right: var(--space-5);
+  }
+
+  .floating-wpp-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Tooltip oculto no mobile (espaço limitado) */
+  .floating-wpp-tooltip {
+    display: none;
+  }
+}
+
+/* Desktop grande: posição um pouco mais recuada */
+@media (min-width: 1440px) {
+  .floating-wpp {
+    bottom: var(--space-8);
+    right: var(--space-8);
+    width: 64px;
+    height: 64px;
+  }
+
+  .floating-wpp-icon {
+    width: 30px;
+    height: 30px;
+  }
+}

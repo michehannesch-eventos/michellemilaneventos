@@ -1,0 +1,443 @@
+/* ================================================================
+   GALLERY.CSS — Portfólio de Decorações Michelle Milan Eventos
+   ----------------------------------------------------------------
+   Conteúdo:
+   1. Seção da Galeria
+   2. Grid Masonry-Style (CSS Grid Areas)
+   3. Item da Galeria — Base
+   4. Variantes: tall e wide
+   5. Overlay & Zoom Icon
+   6. Modal Lightbox
+   7. Navegação do Modal
+   8. Responsive
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   1. SEÇÃO DA GALERIA
+   ---------------------------------------------------------------- */
+.section-gallery {
+  position: relative;
+  background-color: var(--color-dark-deep);
+  padding-block: var(--space-20);
+  overflow: hidden;
+}
+
+/* Ornamento de fundo */
+.section-gallery::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.03) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.section-gallery .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ----------------------------------------------------------------
+   2. GRID DA GALERIA — Mobile First (1 coluna)
+   ---------------------------------------------------------------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  padding-inline: var(--space-4);
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
+/* ── Tablet: 2 colunas ────────────────────────────────────────── */
+@media (min-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+    padding-inline: var(--space-6);
+  }
+}
+
+/* ── Desktop: Grid Masonry com 4 colunas e areas definidas ─────── */
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: var(--space-3);
+    padding-inline: var(--space-8);
+
+    /*
+      Layout visual:
+      [ 1 ][ 2 ][ 3 ][ 5 ]
+      [ 4 ─── wide ─── ][ 6 ][ 7 ]
+    */
+    grid-template-areas:
+      "item1 item2 item3 item5"
+      "item4 item4 item6 item7";
+  }
+
+  #gallery-item-1 { grid-area: item1; }
+  #gallery-item-2 { grid-area: item2; }
+  #gallery-item-3 { grid-area: item3; }
+  #gallery-item-4 { grid-area: item4; }
+  #gallery-item-5 { grid-area: item5; }
+  #gallery-item-6 { grid-area: item6; }
+  #gallery-item-7 { grid-area: item7; }
+}
+
+/* ----------------------------------------------------------------
+   3. ITEM DA GALERIA — BASE
+   ---------------------------------------------------------------- */
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-dark-soft);
+  aspect-ratio: 4 / 3;
+
+  /* Borda dourada sutil */
+  box-shadow:
+    0 0 0 1px rgba(201, 168, 76, 0.08),
+    var(--shadow-dark-sm);
+
+  transition:
+    box-shadow var(--transition-luxury),
+    transform var(--transition-luxury);
+}
+
+.gallery-item:hover {
+  box-shadow:
+    0 0 0 1px rgba(201, 168, 76, 0.25),
+    var(--shadow-gold-sm),
+    var(--shadow-dark-sm);
+  transform: translateY(-3px);
+  z-index: 2;
+}
+
+/* Botão wrapper (semântico + acessível) */
+.gallery-item-btn {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Imagem da galeria */
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition:
+    transform var(--transition-luxury),
+    filter var(--transition-luxury);
+  filter: brightness(0.92) contrast(1.05);
+}
+
+.gallery-item-btn:hover .gallery-img,
+.gallery-item-btn:focus-visible .gallery-img {
+  transform: scale(1.06);
+  filter: brightness(0.78) contrast(1.08);
+}
+
+/* ----------------------------------------------------------------
+   4. VARIANTES DE TAMANHO
+   ---------------------------------------------------------------- */
+
+/* Item alto (portrait 3:4) — mobile */
+.gallery-item--tall {
+  aspect-ratio: 3 / 4;
+}
+
+/* Item largo (landscape 2:1) */
+.gallery-item--wide {
+  aspect-ratio: 2 / 1;
+}
+
+/* No desktop, o item wide já é tratado via grid-area */
+@media (min-width: 1024px) {
+  .gallery-item {
+    aspect-ratio: unset;
+    min-height: 260px;
+  }
+
+  .gallery-item--tall {
+    min-height: 400px;
+  }
+
+  /* Item 4 (wide) tem altura menor pois é 2 colunas */
+  #gallery-item-4 {
+    min-height: 240px;
+  }
+}
+
+/* ----------------------------------------------------------------
+   5. OVERLAY & ZOOM ICON
+   ---------------------------------------------------------------- */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(13, 12, 10, 0.60) 0%,
+    rgba(201, 168, 76, 0.15) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-luxury);
+}
+
+.gallery-item-btn:hover .gallery-overlay,
+.gallery-item-btn:focus-visible .gallery-overlay {
+  opacity: 1;
+}
+
+/* Ícone de zoom */
+.gallery-zoom-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 76, 0.60);
+  background: rgba(13, 12, 10, 0.50);
+  color: var(--color-gold-light);
+  font-size: 1.5rem;
+  font-weight: var(--fw-light);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transform: scale(0.80);
+  opacity: 0;
+  transition:
+    transform var(--transition-luxury),
+    opacity var(--transition-luxury);
+}
+
+.gallery-item-btn:hover .gallery-zoom-icon,
+.gallery-item-btn:focus-visible .gallery-zoom-icon {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* ================================================================
+   6. MODAL LIGHTBOX
+   ================================================================ */
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+
+  /* Estado inicial: oculto */
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Ativo: classe adicionada via JS */
+.gallery-modal.is-open {
+  visibility: visible;
+  pointer-events: all;
+}
+
+/* Backdrop escuro */
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 5, 4, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  opacity: 0;
+  transition: opacity var(--transition-luxury);
+}
+
+.gallery-modal.is-open .modal-backdrop {
+  opacity: 1;
+}
+
+/* Conteúdo do modal */
+.modal-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90dvh;
+
+  transform: scale(0.94) translateY(12px);
+  opacity: 0;
+  transition:
+    transform var(--transition-luxury),
+    opacity var(--transition-luxury);
+}
+
+.gallery-modal.is-open .modal-content {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* Imagem do modal */
+.modal-image {
+  max-width: 100%;
+  max-height: 78dvh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  display: block;
+
+  /* Moldura elegante */
+  box-shadow:
+    0 0 0 1px rgba(201, 168, 76, 0.20),
+    0 0 0 5px rgba(13, 12, 10, 0.80),
+    0 0 0 6px rgba(201, 168, 76, 0.10),
+    0 32px 80px rgba(0, 0, 0, 0.80);
+
+  /* Transição ao navegar */
+  transition: opacity 0.25s ease;
+}
+
+.modal-image.is-fading {
+  opacity: 0;
+}
+
+/* Contador (1 de 7) */
+.modal-counter {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-light);
+  letter-spacing: 0.20em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  margin-top: var(--space-4);
+}
+
+/* ----------------------------------------------------------------
+   7. BOTÕES DE NAVEGAÇÃO DO MODAL
+   ---------------------------------------------------------------- */
+
+/* Botão Fechar */
+.modal-close {
+  position: absolute;
+  top: -var(--space-12);
+  right: 0;
+  top: -48px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, 0.10);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  color: var(--color-gold-light);
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-base);
+  line-height: 1;
+}
+
+.modal-close:hover {
+  background: rgba(201, 168, 76, 0.20);
+  border-color: rgba(201, 168, 76, 0.50);
+  transform: rotate(90deg);
+}
+
+/* Botões Prev / Next */
+.modal-prev,
+.modal-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(13, 12, 10, 0.70);
+  border: 1px solid rgba(201, 168, 76, 0.20);
+  color: var(--color-gold-light);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-base);
+  z-index: 2;
+}
+
+.modal-prev {
+  left: -24px;
+}
+
+.modal-next {
+  right: -24px;
+}
+
+.modal-prev:hover,
+.modal-next:hover {
+  background: rgba(201, 168, 76, 0.15);
+  border-color: rgba(201, 168, 76, 0.45);
+}
+
+.modal-prev:hover {
+  transform: translateY(-50%) translateX(-3px);
+}
+
+.modal-next:hover {
+  transform: translateY(-50%) translateX(3px);
+}
+
+/* Mobile: botões abaixo da imagem */
+@media (max-width: 639px) {
+  .modal-prev,
+  .modal-next {
+    position: static;
+    transform: none;
+  }
+
+  .modal-content {
+    gap: var(--space-4);
+  }
+
+  /* Wrapper inline para os botões de nav no mobile */
+  .modal-nav-row {
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-prev:hover {
+    transform: translateX(-3px);
+  }
+
+  .modal-next:hover {
+    transform: translateX(3px);
+  }
+}

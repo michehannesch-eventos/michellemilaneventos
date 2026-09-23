@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <!-- ============================================================
+       META TAGS DE SEGURANÇA (AppSec)
+  ============================================================ -->
+  <!-- Content-Security-Policy (CSP) Restrita -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;" />
+
+  <!-- Controle de Referenciador para proteger dados da URL -->
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <!-- ============================================================
+       META TAGS ESSENCIAIS — SEO & PERFORMANCE
+  ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- SEO Primary -->
+  <title>Michelle Milan Eventos | Cerimonial de Luxo em Brasília</title>
+  <meta name="description"
+    content="Cerimonial de luxo e organização de eventos em Brasília. A Michelle Milan Eventos transforma seu sonho em momentos inesquecíveis com elegância e sofisticação." />
+  <meta name="keywords"
+    content="cerimonial de luxo, organização de eventos, assessoria de casamento, Michelle Milan, eventos de luxo, wedding planner, decoração de eventos, Brasília" />
+  <meta name="author" content="Michelle Milan Eventos" />
+  <meta name="robots" content="index, follow" />
+  <!-- PWA & Mobile Web Experience -->
+  <link rel="manifest" href="./site.webmanifest" />
+  <meta name="theme-color" content="#0d0c0a" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Michelle Milan" />
+    <!-- Configuração de SEO Internacional / Multilíngue (hreflang) -->
+  <link rel="alternate" hreflang="pt-BR" href="https://michellemilaneventos.com.br/" />
+  <link rel="alternate" hreflang="en" href="https://michellemilaneventos.com.br/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://michellemilaneventos.com.br/" />
+  <link rel="canonical" href="https://michellemilaneventos.com.br/" />
+  <link rel="icon" type="image/webp" href="./assets/michele.webp" />
+  <link rel="apple-touch-icon" href="./assets/michele.webp" />
+
+  <!-- Open Graph (Facebook, WhatsApp, Redes Sociais) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://michellemilaneventos.com.br/" />
+  <meta property="og:title" content="Michelle Milan Eventos | Cerimonial de Luxo em Brasília" />
+  <meta property="og:description"
+    content="Cerimonial de luxo e organização de eventos exclusivos. Elegância, sofisticação e momentos inesquecíveis em Brasília e região." />
+  <!-- O WhatsApp prefere URLs absolutas para imagens no Open Graph -->
+  <meta property="og:image" content="https://michellemilaneventos.com.br/assets/michele.webp" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Michelle Milan Eventos" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://michellemilaneventos.com.br/" />
+  <meta name="twitter:title" content="Michelle Milan Eventos | Cerimonial de Luxo" />
+  <meta name="twitter:description" content="Cerimonial e assessoria para casamentos e eventos de luxo em Brasília." />
+  <meta name="twitter:image" content="https://michellemilaneventos.com.br/assets/michele.webp" />
+
+  <!-- ============================================================
+       DADOS ESTRUTURADOS (JSON-LD)
+  ============================================================ -->
+  <!-- Schema.org JSON-LD Estruturado - Cobertura Total DF e Entorno -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@id": "https://michellemilaneventos.com.br/#business",
+        "name": "Michelle Milan Eventos & Cerimonial",
+        "alternateName": "Michelle Milan Cerimonial de Luxo",
+        "url": "https://michellemilaneventos.com.br/",
+        "logo": "https://michellemilaneventos.com.br/assets/michele.webp",
+        "image": "https://michellemilaneventos.com.br/assets/michele.webp",
+        "description": "Cerimonial de luxo, assessoria completa e organização de casamentos, debutantes e eventos corporativos em todas as regiões do Distrito Federal e Entorno.",
+        "telephone": "+5561992443814",
+        "email": "michellemilaneventos@gmail.com",
+        "priceRange": "$$$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Brasília",
+          "addressRegion": "DF",
+          "addressCountry": "BR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -15.793889,
+          "longitude": -47.882778
+        },
+        "sameAs": [
+          "https://instagram.com/michellemilaneventos",
+          "https://pinterest.com/michellemilaneventos"
+        ],
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "Distrito Federal" },
+          { "@type": "AdministrativeArea", "name": "Plano Piloto (Asa Sul e Asa Norte)" },
+          { "@type": "AdministrativeArea", "name": "Lago Sul" },
+          { "@type": "AdministrativeArea", "name": "Lago Norte" },
+          { "@type": "AdministrativeArea", "name": "Park Way" },
+          { "@type": "AdministrativeArea", "name": "Sudoeste / Octogonal" },
+          { "@type": "AdministrativeArea", "name": "Noroeste" },
+          { "@type": "AdministrativeArea", "name": "Águas Claras" },
+          { "@type": "AdministrativeArea", "name": "Vicente Pires" },
+          { "@type": "AdministrativeArea", "name": "Guará" },
+          { "@type": "AdministrativeArea", "name": "Taguatinga" },
+          { "@type": "AdministrativeArea", "name": "Ceilândia" },
+          { "@type": "AdministrativeArea", "name": "Samambaia" },
+          { "@type": "AdministrativeArea", "name": "Brazlândia" },
+          { "@type": "AdministrativeArea", "name": "Sobradinho" },
+          { "@type": "AdministrativeArea", "name": "Sobradinho II" },
+          { "@type": "AdministrativeArea", "name": "Planaltina" },
+          { "@type": "AdministrativeArea", "name": "Gama" },
+          { "@type": "AdministrativeArea", "name": "Santa Maria" },
+          { "@type": "AdministrativeArea", "name": "São Sebastião" },
+          { "@type": "AdministrativeArea", "name": "Jardim Botânico" },
+          { "@type": "AdministrativeArea", "name": "Cruzeiro" },
+          { "@type": "AdministrativeArea", "name": "Candangolândia" },
+          { "@type": "AdministrativeArea", "name": "Núcleo Bandeirante" },
+          { "@type": "AdministrativeArea", "name": "Riacho Fundo" },
+          { "@type": "AdministrativeArea", "name": "Riacho Fundo II" },
+          { "@type": "AdministrativeArea", "name": "Recanto das Emas" },
+          { "@type": "AdministrativeArea", "name": "Paranoá" },
+          { "@type": "AdministrativeArea", "name": "Itapoã" },
+          { "@type": "AdministrativeArea", "name": "SIA" },
+          { "@type": "AdministrativeArea", "name": "SCIA / Estrutural" },
+          { "@type": "AdministrativeArea", "name": "Varjão" },
+          { "@type": "AdministrativeArea", "name": "Fercal" },
+          { "@type": "AdministrativeArea", "name": "Sol Nascente / Pôr do Sol" },
+          { "@type": "AdministrativeArea", "name": "Arniqueira" },
+          { "@type": "AdministrativeArea", "name": "Arapoanga" },
+          { "@type": "AdministrativeArea", "name": "Água Quente" },
+          { "@type": "AdministrativeArea", "name": "Valparaíso de Goiás" },
+          { "@type": "AdministrativeArea", "name": "Novo Gama" },
+          { "@type": "AdministrativeArea", "name": "Luziânia" },
+          { "@type": "AdministrativeArea", "name": "Águas Lindas de Goiás" },
+          { "@type": "AdministrativeArea", "name": "Formosa" }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Serviços de Cerimonial e Assessoria",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Assessoria Completa para Casamentos de Luxo",
+                "description": "Planejamento integral, seleção de fornecedores, cronograma e execução impecável para casamentos no DF e Entorno."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Cerimonial do Dia / Assessoria Final",
+                "description": "Coordenação completa do dia do evento, alinhamento técnico de fornecedores e protocolo."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Festas de 15 Anos e Debutantes",
+                "description": "Roteiro personalizado, valsa, protocolos e produção moderna para celebrações de 15 anos."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Eventos Corporativos e Solenidades",
+                "description": "Organização executiva para lançamentos, premiações e congressos em Brasília."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://michellemilaneventos.com.br/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Qual a diferença prática entre assessoria completa e cerimonial do dia?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A assessoria completa (Firenze) conduz os noivos desde a concepção do projeto — incluindo gestão financeira, cronograma mestre, curadoria de fornecedores nobres e visitas técnicas a locais exclusivos. Já o cerimonial do dia (Capri) atua nos últimos 30 a 45 dias, focando no alinhamento minucioso dos contratos já firmados, ensaio e direção impecável de todo o protocolo no grande dia."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Com quanto tempo de antecedência devo iniciar o planejamento do casamento ou evento em Brasília?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Recomendamos iniciar de 10 a 18 meses de antecedência para casamentos e grandes eventos em Brasília, garantindo disponibilidade nos espaços mais disputados (como mansões no Lago Sul e clubes tradicionais) e nos períodos de alta procura (maio, setembro, outubro e dezembro). Para celebrações intimistas ou assessoria do dia, prazos de 3 a 6 meses são perfeitamente viáveis."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "A Michelle Milan atende em espaços abertos, mansões no Lago Sul/Park Way e embaixadas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim! Temos ampla expertise em casamentos ao ar livre, fazendas cinematográficas, mansões no Lago Sul, Park Way (SMPW), Jardim Botânico e sedes de embaixadas. Dominamos toda a complexidade de logística externa, cobertura, iluminação cênica, geradores e rígido protocolo diplomático e social exigido nesses espaços."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como funciona o primeiro alinhamento e a proposta de orçamento?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A reunião inicial é exclusiva e sem compromisso. Conversamos para compreender a essência do seu sonho, o estilo do evento, o número estimado de convidados e a expectativa orçamentária. A partir desse diagnóstico, desenvolvemos uma proposta personalizada detalhando o plano de trabalho ideal para a sua celebração."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O atendimento pode ser realizado em inglês para noivos ou convidados estrangeiros?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Com certeza. Oferecemos assessoria bilíngue completa (Português e Inglês) para casais multiculturais, diplomatas e convidados internacionais. Realizamos reuniões, alinhamento técnico de fornecedores, cronogramas e condução cerimonial com fluência, proporcionando total acolhimento e segurança para quem vem do exterior."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- ============================================================
+       GOOGLE FONTS — Tipografia de Luxo
+       Cormorant Garamond : Títulos (serifada elegante)
+       Montserrat          : Corpo de texto (sans-serif moderna)
+       Great Vibes         : Acento caligráfico
+  ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" /></noscript>
+
+  <!-- ============================================================
+       CSS MODULAR — Importação em Cascata
+  ============================================================ -->
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+  <link rel="stylesheet" href="css/faq.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/floating-wpp.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       HEADER — Navegação Principal
+  ============================================================ -->
+  <header id="site-header" class="site-header" role="banner">
+    <nav class="nav-container" aria-label="Navegação principal">
+
+      <!-- Logo / Marca -->
+      <a href="#hero" class="nav-logo" aria-label="Michelle Milan Eventos — Início">
+        <span class="logo-script">Michelle Milan</span>
+        <span class="logo-subtitle">Eventos &amp; Cerimonial</span>
+      </a>
+
+      <!-- Menu Desktop -->
+      <ul class="nav-menu" id="nav-menu" role="list">
+        <li><a href="#sobre" class="nav-link" id="nav-sobre">Sobre</a></li>
+        <li><a href="#servicos" class="nav-link" id="nav-servicos">Serviços</a></li>
+        <li><a href="#portfolio" class="nav-link" id="nav-portfolio">Portfólio</a></li>
+        <li><a href="#faq" class="nav-link" id="nav-faq">FAQ</a></li>
+        <li>
+          <a href="https://wa.me/5561992443814?text=Ol%C3%A1%20Michelle%2C%20encontrei%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20evento%20em%20Bras%C3%ADlia"
+            class="nav-cta" id="nav-cta-contato" target="_blank" rel="noopener noreferrer"
+            aria-label="Entrar em contato pelo WhatsApp">Contato</a>
+        </li>
+        <li class="nav-item-lang">
+          <div class="lang-switcher" aria-label="Seletor de idioma">
+            <span class="lang-btn active">PT</span>
+            <span class="lang-divider">/</span>
+            <a href="./en/" class="lang-btn" title="Switch to English">EN</a>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Botão Hamburguer (Mobile) -->
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menu de navegação" aria-expanded="false"
+        aria-controls="nav-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+    </nav>
+
+    <!-- Backdrop menu mobile -->
+    <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+
+  </header>
+
+  <!-- ============================================================
+       MAIN — Conteúdo Principal
+  ============================================================ -->
+  <main id="main-content" role="main">
+
+    <!-- ══════════════════════════════════════════════════════════
+         SEÇÃO 1: HERO — Apresentação de Impacto
+    ══════════════════════════════════════════════════════════ -->
+    <section id="hero" class="section-hero" aria-label="Apresentação Michelle Milan">
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <span class="hero-subtitle">ASSESSORIA &amp; EVENTOS EXCLUSIVOS</span>
+        <h1 class="hero-title">
+          Cerimonial de Luxo <em>em Brasília</em>
+        </h1>
+        <p class="hero-description">
+          Assessoria e cerimonial para casamentos e eventos exclusivos.<br class="desktop-only" />
+          Cada detalhe planejado com elegância e dedicação absoluta.
+        </p>
+        <div class="hero-actions">
+          <a href="https://wa.me/5561992443814?text=Ol%C3%A1%20Michelle%2C%20encontrei%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20evento%20em%20Bras%C3%ADlia"
+            class="btn btn-primary" id="hero-cta-wpp" target="_blank" rel="noopener noreferrer"
+            aria-label="Falar com Michelle Milan no WhatsApp">Fale com a Michelle</a>
+          <a href="#portfolio" class="btn btn-secondary" id="hero-cta-portfolio">
+            Ver Portfólio
+          </a>
+        </div>
+      </div>
+
+      <!-- Foto da Michelle -->
+      <div class="hero-image-wrapper">
+        <div class="hero-image-frame">
+          <img src="assets/michele.webp" alt="Michelle Milan - Cerimonialista e Assessora de Casamentos e Eventos de Luxo em Brasília DF" class="hero-image" loading="eager"
+            fetchpriority="high" width="480" height="600" />
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <span class="scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SEÇÃO 2: SOBRE — Quem é Michelle Milan
+    ══════════════════════════════════════════════════════════ -->
+    <section id="sobre" class="section-about" aria-labelledby="sobre-titulo">
+      <div class="container">
+        <div class="about-grid">
+
+          <div class="about-image-wrapper">
+            <div class="about-image-frame">
+              <img src="assets/michele.webp" alt="Michelle Milan - Cerimonialista e Assessora de Casamentos e Eventos de Luxo em Brasília DF" class="about-image"
+                loading="lazy" width="420" height="520" />
+            </div>
+            <div class="about-badge" aria-hidden="true">
+              <span class="badge-number">10+</span>
+              <span class="badge-text">Anos de<br />experiência</span>
+            </div>
+          </div>
+
+          <div class="about-content">
+            <p class="section-eyebrow">Sobre a Criadora</p>
+            <h2 id="sobre-titulo" class="section-title">
+              Michelle Milan<br /><em>Cerimonialista de Luxo no DF</em>
+            </h2>
+            <div class="about-divider" aria-hidden="true"></div>
+            <p class="about-text">
+              Michelle Milan é cerimonialista especializada em eventos de alto padrão, unindo sensibilidade artística e
+              precisão operacional para criar celebrações verdadeiramente inesquecíveis.
+            </p>
+            <p class="about-text">
+              Com mais de uma década de experiência, cada evento é tratado como uma obra de arte única — do planejamento
+              minucioso à execução impecável, garantindo que cada detalhe reflita a personalidade e os sonhos dos nossos
+              clientes.
+            </p>
+            <ul class="about-highlights" aria-label="Diferenciais Michelle Milan">
+              <li class="highlight-item">
+                <span class="highlight-icon" aria-hidden="true">✦</span>
+                <span>Atendimento exclusivo e personalizado</span>
+              </li>
+              <li class="highlight-item">
+                <span class="highlight-icon" aria-hidden="true">✦</span>
+                <span>Rede de fornecedores premium selecionados</span>
+              </li>
+              <li class="highlight-item">
+                <span class="highlight-icon" aria-hidden="true">✦</span>
+                <span>Mais de 500 eventos realizados</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SEÇÃO 3: SERVIÇOS — Pacotes (Firenze, Venezia, Capri, Milano)
+    ══════════════════════════════════════════════════════════ -->
+    <section id="servicos" class="section-services" aria-labelledby="servicos-titulo">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-eyebrow">Nossos Serviços</p>
+          <h2 id="servicos-titulo" class="section-title">
+            Assessoria &amp; Cerimonial<br /><em>sob medida em Brasília</em>
+          </h2>
+          <p class="section-subtitle">
+            Cada pacote foi criado para oferecer uma experiência única, adaptada ao tamanho e à visão do seu evento.
+          </p>
+        </div>
+
+        <div class="services-grid" role="list">
+
+          <!-- Pacote 1: Firenze -->
+          <article class="service-card" id="servico-firenze" role="listitem" aria-labelledby="firenze-titulo">
+            <div class="service-card-inner">
+              <div class="service-icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <p class="service-tag">Assessoria Completa</p>
+              <h3 id="firenze-titulo" class="service-name">Firenze</h3>
+              <div class="service-divider" aria-hidden="true"></div>
+              <p class="service-description">
+                Assessoria completa para casamentos de luxo (Full-Service Wedding Planning): gestão minuciosa de orçamento, curadoria de locais nobres no DF e contratação dos fornecedores ideais para uma celebração inesquecível.
+              </p>
+              <ul class="service-features" aria-label="Itens incluídos no pacote Firenze">
+                <li>Gestão financeira &amp; de orçamento</li>
+                <li>Curadoria de locais nobres e fornecedores</li>
+                <li>Cronograma geral e visitas técnicas</li>
+                <li>Coordenação e cerimonial total no dia</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Pacote 2: Venezia — Destaque -->
+          <article class="service-card service-card--featured" id="servico-venezia" role="listitem"
+            aria-labelledby="venezia-titulo">
+            <div class="service-card-inner">
+              <div class="service-badge-featured" aria-label="Pacote mais popular">Mais Popular</div>
+              <div class="service-icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+              </div>
+              <p class="service-tag">Assessoria Parcial</p>
+              <h3 id="venezia-titulo" class="service-name">Venezia</h3>
+              <div class="service-divider" aria-hidden="true"></div>
+              <p class="service-description">
+                Assessoria parcial e coordenação final: ideal para casais que já contrataram o espaço. Estruturamos o cronograma mestre e realizamos o alinhamento técnico de fornecedores a partir dos últimos 60 dias.
+              </p>
+              <ul class="service-features" aria-label="Itens incluídos no pacote Venezia">
+                <li>Auditoria de contratos já firmados</li>
+                <li>Alinhamento técnico nos últimos 60 dias</li>
+                <li>Estruturação do cronograma mestre</li>
+                <li>Gestão presencial completa no evento</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Pacote 3: Capri -->
+          <article class="service-card" id="servico-capri" role="listitem" aria-labelledby="capri-titulo">
+            <div class="service-card-inner">
+              <div class="service-icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+              </div>
+              <p class="service-tag">Cerimonial do Dia</p>
+              <h3 id="capri-titulo" class="service-name">Capri</h3>
+              <div class="service-divider" aria-hidden="true"></div>
+              <p class="service-description">
+                Cerimonial do dia e direção de evento (Day-Of Coordination): tranquilidade total com foco na execução impecável da cerimônia e recepção, ensaio prévio, protocolo de cortejo e supervisão de montagem.
+              </p>
+              <ul class="service-features" aria-label="Itens incluídos no pacote Capri">
+                <li>Assunção operacional 30 a 45 dias antes</li>
+                <li>Ensaio e direção do cortejo cerimonial</li>
+                <li>Supervisão de montagem e fornecedores</li>
+                <li>Execução impecável da cerimônia e recepção</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Pacote 4: Milano -->
+          <article class="service-card service-card--dark" id="servico-milano" role="listitem"
+            aria-labelledby="milano-titulo">
+            <div class="service-card-inner">
+              <div class="service-icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="12" cy="8" r="6" />
+                  <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+                </svg>
+              </div>
+              <p class="service-tag">Eventos Sociais</p>
+              <h3 id="milano-titulo" class="service-name">Milano</h3>
+              <div class="service-divider" aria-hidden="true"></div>
+              <p class="service-description">
+                Festas de 15 anos, bodas e eventos sociais de luxo: concepção personalizada para eventos temáticos e recepções exclusivas, com direção de protocolos, ensaios de valsa e produção artística refinada.
+              </p>
+              <ul class="service-features" aria-label="Itens incluídos no pacote Milano">
+                <li>Festas de 15 anos, bodas e galas sociais</li>
+                <li>Coordenação de valsa, homenagens e protocolo</li>
+                <li>Eventos temáticos e recepções exclusivas</li>
+                <li>Acompanhamento dedicado para os anfitriões</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- CTA Serviços -->
+        <div class="services-cta">
+          <p class="services-cta-text">Não sabe qual pacote escolher?</p>
+          <a href="https://wa.me/5561992443814?text=Ol%C3%A1%20Michelle%2C%20encontrei%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20evento%20em%20Bras%C3%ADlia"
+            class="btn btn-primary" id="servicos-cta-wpp" target="_blank" rel="noopener noreferrer"
+            aria-label="Solicitar consultoria pelo WhatsApp">Solicitar Consultoria</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SEÇÃO 4: PORTFÓLIO — Galeria de Decorações
+    ══════════════════════════════════════════════════════════ -->
+    <section id="portfolio" class="section-gallery" aria-labelledby="portfolio-titulo">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">Portfólio</p>
+          <h2 id="portfolio-titulo" class="section-title">
+            Casamentos &amp; Eventos<br /><em>realizados em Brasília</em>
+          </h2>
+          <p class="section-subtitle">Uma seleção dos nossos eventos mais memoráveis.</p>
+        </div>
+      </div>
+
+      <!-- Grade de Imagens — full-width fora do container -->
+      <div class="gallery-grid" id="gallery-grid" role="list" aria-label="Galeria de eventos realizados">
+
+        <article class="gallery-item" id="gallery-item-1" role="listitem">
+          <button class="gallery-item-btn" aria-label="Ver decoração 1 em tamanho maior" data-index="0">
+            <img src="assets/decoracao-1.webp" alt="Mesa de doces finos para casamento clássico no Lago Sul, Brasília - Michelle Milan Cerimonial"
+              class="gallery-img" loading="lazy" width="600" height="400" />
+            <div class="gallery-overlay" aria-hidden="true"><span class="gallery-zoom-icon">+</span></div>
+          </button>
+        </article>
+
+        <article class="gallery-item gallery-item--tall" id="gallery-item-2" role="listitem">
+          <button class="gallery-item-btn" aria-label="Ver decoração 2 em tamanho maior" data-index="1">
+            <img src="assets/decoracao-2.webp" alt="Arranjo floral requintado para evento social no Park Way DF - Assessoria de Eventos"
+              class="gallery-img" loading="lazy" width="600" height="800" />
+            <div class="gallery-overlay" aria-hidden="true"><span class="gallery-zoom-icon">+</span></div>
+          </button>
+        </article>
+
+        <article class="gallery-item" id="gallery-item-3" role="listitem">
+          <button class="gallery-item-btn" aria-label="Ver decoração 3 em tamanho maior" data-index="2">
+            <img src="assets/decoracao-3.webp" alt="Decoração de cerimônia de casamento ao ar livre no Setor de Clubes Sul, Brasília"
+              class="gallery-img" loading="lazy" width="600" height="400" />
+            <div class="gallery-overlay" aria-hidden="true"><span class="gallery-zoom-icon">+</span></div>
+          </button>
+        </article>
+
+        <article class="gallery-item gallery-item--wide" id="gallery-item-4" role="listitem">
+          <button class="gallery-item-btn" aria-label="Ver decoração 4 em tamanho maior" data-index="3">
+            <img src="assets/decoracao-4.webp" alt="Ambientação luxuosa e iluminação cênica para recepção de casamento em Brasília DF"
+              class="gallery-img" loading="lazy" width="1200" height="400" />
+            <div class="gallery-overlay" aria-hidden="true"><span class="gallery-zoom-icon">+</span></div>
+          </button>
+        </article>
+
+        <article class="gallery-item" id="gallery-item-5" role="listitem">
+          <button class="gallery-item-btn" aria-label="Ver decoração 5 em tamanho maior" data-index="4">
+            <img src="assets/decoracao-5.webp" alt="Mesa posta de banquete para festa de 15 anos de luxo em Taguatinga e Águas Claras"
+              class="gallery-img" loading="lazy" width="600" height="400" />
+            <div class="gallery-overlay" aria-hidden="true"><span class="gallery-zoom-icon">+</span></div>
+          </button>
+        </article>
+
+        <article class="gallery-item gallery-item--tall" id="gallery-item-6" role="listitem">
+          <button class="gallery-item-btn" aria-label="Ver decoração 6 em tamanho maior" data-index="5">
+            <img src="assets/decoracao-6.webp" alt="Detalhes de decoração floral suspensa para casamento no Lago Norte, Brasília"
+              class="gallery-img" loading="lazy" width="600" height="800" />
+            <div class="gallery-overlay" aria-hidden="true"><span class="gallery-zoom-icon">+</span></div>
+          </button>
+        </article>
+
+        <article class="gallery-item" id="gallery-item-7" role="listitem">
+          <button class="gallery-item-btn" aria-label="Ver decoração 7 em tamanho maior" data-index="6">
+            <img src="assets/decoracao-7.webp" alt="Cenário completo de altar para cerimônia de casamento intimista no Jardim Botânico DF"
+              class="gallery-img" loading="lazy" width="600" height="400" />
+            <div class="gallery-overlay" aria-hidden="true"><span class="gallery-zoom-icon">+</span></div>
+          </button>
+        </article>
+
+      </div>
+
+      <!-- Modal Lightbox -->
+      <div class="gallery-modal" id="gallery-modal" role="dialog" aria-modal="true"
+        aria-label="Visualização ampliada da imagem" aria-hidden="true">
+        <div class="modal-backdrop" id="modal-backdrop"></div>
+        <div class="modal-content">
+          <button class="modal-close" id="modal-close" aria-label="Fechar visualização"><span
+              aria-hidden="true">&times;</span></button>
+          <button class="modal-prev" id="modal-prev" aria-label="Imagem anterior"><span
+              aria-hidden="true">&#8592;</span></button>
+          <img src="" alt="Visualização ampliada do portfólio de decoração Michelle Milan" class="modal-image" id="modal-image" loading="lazy" decoding="async">
+          <button class="modal-next" id="modal-next" aria-label="Próxima imagem"><span
+              aria-hidden="true">&#8594;</span></button>
+          <p class="modal-counter" id="modal-counter" aria-live="polite"></p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SEÇÃO 5: FAQ — Perguntas Frequentes
+    ══════════════════════════════════════════════════════════ -->
+    <section id="faq" class="section-faq" aria-labelledby="faq-titulo">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-eyebrow">Dúvidas</p>
+          <h2 id="faq-titulo" class="section-title">
+            Perguntas Frequentes<br /><em>sobre Cerimonial no DF</em>
+          </h2>
+        </div>
+
+        <div class="faq-list" role="list">
+
+          <details class="faq-item" id="faq-item-1" role="listitem">
+            <summary class="faq-question" id="faq-q1">
+              <span>Qual a diferença prática entre assessoria completa e cerimonial do dia?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>A <strong>assessoria completa (Firenze)</strong> conduz os noivos desde a concepção do projeto — incluindo gestão financeira, cronograma mestre, curadoria de fornecedores nobres e visitas técnicas a locais exclusivos. Já o <strong>cerimonial do dia (Capri)</strong> atua nos últimos 30 a 45 dias, focando no alinhamento minucioso dos contratos já firmados, ensaio e direção impecável de todo o protocolo no grande dia.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" id="faq-item-2" role="listitem">
+            <summary class="faq-question" id="faq-q2">
+              <span>Com quanto tempo de antecedência devo iniciar o planejamento do casamento ou evento em Brasília?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Recomendamos iniciar de <strong>10 a 18 meses de antecedência</strong> para casamentos e grandes eventos em Brasília, garantindo disponibilidade nos espaços mais disputados (como mansões no Lago Sul e clubes tradicionais) e nos períodos de alta procura (maio, setembro, outubro e dezembro). Para celebrações intimistas ou assessoria do dia, prazos de <strong>3 a 6 meses</strong> são perfeitamente viáveis.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" id="faq-item-3" role="listitem">
+            <summary class="faq-question" id="faq-q3">
+              <span>A Michelle Milan atende em espaços abertos, mansões no Lago Sul/Park Way e embaixadas?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Sim! Temos ampla expertise em <strong>casamentos ao ar livre, fazendas cinematográficas, mansões no Lago Sul, Park Way (SMPW), Jardim Botânico e sedes de embaixadas</strong>. Dominamos toda a complexidade de logística externa, cobertura, iluminação cênica, geradores e rígido protocolo diplomático e social exigido nesses espaços.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" id="faq-item-4" role="listitem">
+            <summary class="faq-question" id="faq-q4">
+              <span>Como funciona o primeiro alinhamento e a proposta de orçamento?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>A reunião inicial é <strong>exclusiva e sem compromisso</strong>. Conversamos para compreender a essência do seu sonho, o estilo do evento, o número estimado de convidados e a expectativa orçamentária. A partir desse diagnóstico, desenvolvemos uma <strong>proposta personalizada</strong> detalhando o plano de trabalho ideal para a sua celebração.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" id="faq-item-5" role="listitem">
+            <summary class="faq-question" id="faq-q5">
+              <span>O atendimento pode ser realizado em inglês para noivos ou convidados estrangeiros?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Com certeza. Oferecemos <strong>assessoria bilíngue completa (Português e Inglês)</strong> para casais multiculturais, diplomatas e convidados internacionais. Realizamos reuniões, alinhamento técnico de fornecedores, cronogramas e condução cerimonial com fluência, proporcionando total acolhimento e segurança para quem vem do exterior.</p>
+            </div>
+          </details>
+
+        </div>
+
+        <div class="faq-cta">
+          <p>Ainda tem dúvidas? Estou aqui para ajudar.</p>
+          <a href="https://wa.me/5561992443814?text=Ol%C3%A1%20Michelle%2C%20encontrei%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20evento%20em%20Bras%C3%ADlia"
+            class="btn btn-primary" id="faq-cta-wpp" target="_blank" rel="noopener noreferrer"
+            aria-label="Tirar dúvidas pelo WhatsApp">Falar pelo WhatsApp</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEÇÃO 6: COBERTURA REGIONAL ESTRATÉGICA (SEO Local DF e Entorno)
+    ============================================================ -->
+  
+  <!-- Seção de Cobertura Regional Estratégica (SEO Local DF e Entorno) -->
+  <section class="section coverage-section" id="cobertura" aria-label="Atendimento em Brasília e Entorno">
+    <div class="container">
+      <div class="section-header text-center">
+        <p class="section-eyebrow coverage-eyebrow">Presença &amp; Atuação</p>
+        <h2 class="section-title">
+          Atendimento em todo o<br class="desktop-only" />
+          <em>Distrito Federal &amp; Entorno</em>
+        </h2>
+        <div class="gold-divider" aria-hidden="true"></div>
+        <p class="section-subtitle coverage-subtitle">
+          Da cerimônia intimista à grande recepção: assessoria personalizada nos principais espaços, clubes e mansões de Brasília e municípios integrados.
+        </p>
+      </div>
+
+      <div class="coverage-grid" role="list">
+        <article class="coverage-card" role="listitem">
+          <div class="coverage-card-header">
+            <span class="coverage-card-icon" aria-hidden="true">✦</span>
+            <h3 class="coverage-card-title">Áreas Nobres &amp; Mansões</h3>
+          </div>
+          <p>Lago Sul, Lago Norte, Park Way (SMPW), Jardim Botânico e Noroeste.</p>
+        </article>
+
+        <article class="coverage-card" role="listitem">
+          <div class="coverage-card-header">
+            <span class="coverage-card-icon" aria-hidden="true">✦</span>
+            <h3 class="coverage-card-title">Região Central &amp; Clubes</h3>
+          </div>
+          <p>Plano Piloto (Asa Sul e Asa Norte), Sudoeste, Setor de Clubes e Cruzeiro.</p>
+        </article>
+
+        <article class="coverage-card" role="listitem">
+          <div class="coverage-card-header">
+            <span class="coverage-card-icon" aria-hidden="true">✦</span>
+            <h3 class="coverage-card-title">Centros Urbanos &amp; Espaços</h3>
+          </div>
+          <p>Águas Claras, Taguatinga, Vicente Pires, Guará, Ceilândia e Samambaia.</p>
+        </article>
+
+        <article class="coverage-card" role="listitem">
+          <div class="coverage-card-header">
+            <span class="coverage-card-icon" aria-hidden="true">✦</span>
+            <h3 class="coverage-card-title">Todas as RAs &amp; Entorno (RIDE)</h3>
+          </div>
+          <p>Gama, Sobradinho, Planaltina, Santa Maria e cidades do Entorno imediato.</p>
+        </article>
+      </div>
+      
+      <div class="coverage-footnote text-center">
+        <p>Projetos executados com suporte logístico completo em qualquer localidade do DF.</p>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER — Rodapé
+  ============================================================ -->
+  <footer id="site-footer" class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Coluna 1: Marca -->
+        <div class="footer-brand">
+          <p class="footer-logo-script">Michelle Milan</p>
+          <p class="footer-logo-sub">Eventos &amp; Cerimonial</p>
+          <p class="footer-tagline">
+            Transformamos sonhos em celebrações eternas. Com elegância, cuidado e dedicação absoluta a cada detalhe.
+          </p>
+          <div class="footer-social" aria-label="Redes sociais">
+            <a href="https://instagram.com/michellemilaneventos" class="social-link" id="footer-instagram"
+              target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="https://wa.me/5561992443814?text=Ol%C3%A1%20Michelle%2C%20encontrei%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20evento%20em%20Bras%C3%ADlia"
+              class="social-link" id="footer-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                aria-hidden="true">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              </svg>
+            </a>
+            <a href="https://pinterest.com/michellemilaneventos" class="social-link" id="footer-pinterest"
+              target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                aria-hidden="true">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.03-2.83.19-.77 1.27-5.38 1.27-5.38s-.32-.65-.32-1.61c0-1.51.88-2.64 1.97-2.64.93 0 1.38.7 1.38 1.54 0 .94-.6 2.34-.91 3.64-.26 1.09.54 1.97 1.6 1.97 1.92 0 3.4-2.02 3.4-4.95 0-2.59-1.86-4.4-4.52-4.4-3.08 0-4.89 2.31-4.89 4.7 0 .93.36 1.93.8 2.47a.26.26 0 0 1 .07.31c-.08.33-.26 1.09-.3 1.24-.05.2-.17.24-.39.14-1.39-.65-2.26-2.68-2.26-4.32 0-3.51 2.55-6.74 7.36-6.74 3.86 0 6.86 2.75 6.86 6.42 0 3.83-2.41 6.9-5.76 6.9-1.13 0-2.19-.59-2.55-1.28l-.69 2.6c-.25.96-.93 2.16-1.39 2.89.05.01.1.02.15.02C17.52 22 22 17.52 22 12 22 6.48 17.52 2 12 2z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Coluna 2: Navegação -->
+        <nav class="footer-nav" aria-label="Links rápidos">
+          <h3 class="footer-nav-title">Links Rápidos</h3>
+          <ul role="list">
+            <li><a href="#sobre" class="footer-link">Sobre a Michelle</a></li>
+            <li><a href="#servicos" class="footer-link">Serviços</a></li>
+            <li><a href="#portfolio" class="footer-link">Portfólio</a></li>
+            <li><a href="#faq" class="footer-link">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <!-- Coluna 3: Contato -->
+        <div class="footer-contact">
+          <h3 class="footer-nav-title">Contato</h3>
+          <ul role="list" class="footer-contact-list">
+            <li>
+              <a href="https://wa.me/5561992443814?text=Ol%C3%A1%20Michelle%2C%20encontrei%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20evento%20em%20Bras%C3%ADlia"
+                class="footer-link footer-link--contact" target="_blank" rel="noopener noreferrer"
+                aria-label="WhatsApp">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  aria-hidden="true">
+                  <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                </svg>
+                (61) 99244-3814
+              </a>
+            </li>
+            <li>
+              <a href="mailto:michellemilaneventos@gmail.com" class="footer-link footer-link--contact"
+                aria-label="E-mail">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                michellemilaneventos@gmail.com
+              </a>
+            </li>
+            <li>
+              <span class="footer-link footer-link--contact">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                Brasília — DF
+              </span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="footer-year"></span> Michelle Milan Eventos - Brasília e Região. Todos
+          os direitos reservados.</p>
+        <p class="footer-credit">Desenvolvido com &#10084; para momentos inesquecíveis.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       BOTÃO FLUTUANTE DO WHATSAPP
+  ============================================================ -->
+  <a href="https://wa.me/5561992443814?text=Ol%C3%A1%20Michelle%2C%20encontrei%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20evento%20em%20Bras%C3%ADlia"
+    class="floating-wpp" id="floating-wpp-btn" target="_blank" rel="noopener noreferrer"
+    aria-label="Falar com Michelle Milan no WhatsApp" title="Falar pelo WhatsApp">
+    <svg class="floating-wpp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+      aria-hidden="true" width="28" height="28">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+    </svg>
+    <span class="floating-wpp-tooltip" aria-hidden="true">Fale comigo!</span>
+  </a>
+
+  <!-- ============================================================
+       JAVASCRIPT — Carregamento ao Final do Body
+  ============================================================ -->
+  <script src="js/gallery.js" defer></script>
+  <script src="js/main.js" defer></script>
+
+</body>
+
+</html>

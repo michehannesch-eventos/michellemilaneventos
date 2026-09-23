@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- ============================================================
+       SECURITY HEADERS (AppSec)
+  ============================================================ -->
+  <!-- Strict Content-Security-Policy (CSP) -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;" />
+
+  <!-- Referrer Policy -->
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <!-- ============================================================
+       ESSENTIAL META TAGS — SEO & PERFORMANCE
+  ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- SEO Primary -->
+  <title>Michelle Milan Eventos | Luxury Event Planning in Brasília</title>
+  <meta name="description"
+    content="Luxury wedding planning and exclusive event coordination in Brasília. Michelle Milan transforms your dream into unforgettable moments with elegance and absolute dedication." />
+  <meta name="keywords"
+    content="luxury wedding planner, event planning, wedding coordination, Michelle Milan, luxury events, Brasília, event design, bespoke events" />
+  <meta name="author" content="Michelle Milan Eventos" />
+  <meta name="robots" content="index, follow" />
+  <!-- PWA & Mobile Web Experience -->
+  <link rel="manifest" href="../site.webmanifest" />
+  <meta name="theme-color" content="#0d0c0a" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Michelle Milan" />
+  <!-- International SEO / Multilingual Setup (hreflang) -->
+  <link rel="alternate" hreflang="pt-BR" href="https://michellemilaneventos.com.br/" />
+  <link rel="alternate" hreflang="en" href="https://michellemilaneventos.com.br/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://michellemilaneventos.com.br/" />
+  <link rel="canonical" href="https://michellemilaneventos.com.br/en/" />
+  <link rel="icon" type="image/webp" href="../assets/michele.webp" />
+  <link rel="apple-touch-icon" href="../assets/michele.webp" />
+
+  <!-- Open Graph (Facebook, WhatsApp, Social Media) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://michellemilaneventos.com.br/en/" />
+  <meta property="og:title" content="Michelle Milan Eventos | Luxury Event Planning in Brasília" />
+  <meta property="og:description"
+    content="Luxury wedding planning and exclusive event coordination in Brasília. Michelle Milan transforms your dream into unforgettable moments with elegance and absolute dedication." />
+  <!-- WhatsApp prefers absolute URLs for Open Graph images -->
+  <meta property="og:image" content="https://michellemilaneventos.com.br/assets/michele.webp" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Michelle Milan Eventos" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://michellemilaneventos.com.br/en/" />
+  <meta name="twitter:title" content="Michelle Milan Eventos | Luxury Event Planning in Brasília" />
+  <meta name="twitter:description"
+    content="Luxury wedding planning and exclusive event coordination in Brasília. Michelle Milan transforms your dream into unforgettable moments with elegance and absolute dedication." />
+  <meta name="twitter:image" content="https://michellemilaneventos.com.br/assets/michele.webp" />
+
+  <!-- ============================================================
+       STRUCTURED DATA (JSON-LD)
+  ============================================================ -->
+  <!-- Schema.org JSON-LD Structured Data - Comprehensive Coverage in Brasília & Region -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@id": "https://michellemilaneventos.com.br/en/#business",
+        "name": "Michelle Milan Events & Coordination",
+        "alternateName": "Michelle Milan Luxury Event Planner",
+        "url": "https://michellemilaneventos.com.br/en/",
+        "logo": "https://michellemilaneventos.com.br/assets/michele.webp",
+        "image": "https://michellemilaneventos.com.br/assets/michele.webp",
+        "description": "Luxury wedding planning, bespoke coordination, and event design for weddings, debutante galas, and private celebrations throughout Brasília and the Federal District.",
+        "telephone": "+5561992443814",
+        "email": "michellemilaneventos@gmail.com",
+        "priceRange": "$$$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Brasília",
+          "addressRegion": "DF",
+          "addressCountry": "BR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -15.793889,
+          "longitude": -47.882778
+        },
+        "sameAs": [
+          "https://instagram.com/michellemilaneventos",
+          "https://pinterest.com/michellemilaneventos"
+        ],
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "Distrito Federal" },
+          { "@type": "AdministrativeArea", "name": "Plano Piloto (Asa Sul e Asa Norte)" },
+          { "@type": "AdministrativeArea", "name": "Lago Sul" },
+          { "@type": "AdministrativeArea", "name": "Lago Norte" },
+          { "@type": "AdministrativeArea", "name": "Park Way" },
+          { "@type": "AdministrativeArea", "name": "Sudoeste / Octogonal" },
+          { "@type": "AdministrativeArea", "name": "Noroeste" },
+          { "@type": "AdministrativeArea", "name": "Águas Claras" },
+          { "@type": "AdministrativeArea", "name": "Vicente Pires" },
+          { "@type": "AdministrativeArea", "name": "Guará" },
+          { "@type": "AdministrativeArea", "name": "Taguatinga" },
+          { "@type": "AdministrativeArea", "name": "Ceilândia" },
+          { "@type": "AdministrativeArea", "name": "Samambaia" },
+          { "@type": "AdministrativeArea", "name": "Brazlândia" },
+          { "@type": "AdministrativeArea", "name": "Sobradinho" },
+          { "@type": "AdministrativeArea", "name": "Sobradinho II" },
+          { "@type": "AdministrativeArea", "name": "Planaltina" },
+          { "@type": "AdministrativeArea", "name": "Gama" },
+          { "@type": "AdministrativeArea", "name": "Santa Maria" },
+          { "@type": "AdministrativeArea", "name": "São Sebastião" },
+          { "@type": "AdministrativeArea", "name": "Jardim Botânico" },
+          { "@type": "AdministrativeArea", "name": "Cruzeiro" },
+          { "@type": "AdministrativeArea", "name": "Candangolândia" },
+          { "@type": "AdministrativeArea", "name": "Núcleo Bandeirante" },
+          { "@type": "AdministrativeArea", "name": "Riacho Fundo" },
+          { "@type": "AdministrativeArea", "name": "Riacho Fundo II" },
+          { "@type": "AdministrativeArea", "name": "Recanto das Emas" },
+          { "@type": "AdministrativeArea", "name": "Paranoá" },
+          { "@type": "AdministrativeArea", "name": "Itapoã" },
+          { "@type": "AdministrativeArea", "name": "SIA" },
+          { "@type": "AdministrativeArea", "name": "SCIA / Estrutural" },
+          { "@type": "AdministrativeArea", "name": "Varjão" },
+          { "@type": "AdministrativeArea", "name": "Fercal" },
+          { "@type": "AdministrativeArea", "name": "Sol Nascente / Pôr do Sol" },
+          { "@type": "AdministrativeArea", "name": "Arniqueira" },
+          { "@type": "AdministrativeArea", "name": "Arapoanga" },
+          { "@type": "AdministrativeArea", "name": "Água Quente" },
+          { "@type": "AdministrativeArea", "name": "Valparaíso de Goiás" },
+          { "@type": "AdministrativeArea", "name": "Novo Gama" },
+          { "@type": "AdministrativeArea", "name": "Luziânia" },
+          { "@type": "AdministrativeArea", "name": "Águas Lindas de Goiás" },
+          { "@type": "AdministrativeArea", "name": "Formosa" }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Event Planning & Coordination Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Full Planning & Coordination for Luxury Weddings",
+                "description": "Comprehensive planning, premier vendor curation, meticulous timeline, and flawless execution for weddings in Brasília and surrounding regions."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Day-Of Coordination / Final Month Coordination",
+                "description": "Complete day-of management, technical vendor briefing, rehearsal oversight, and protocol execution."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "15th Birthday Galas & Debutante Celebrations",
+                "description": "Bespoke itinerary, traditional waltz coordination, custom protocol, and dynamic production for milestone 15th celebrations."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Corporate Galas & Executive Ceremonies",
+                "description": "Executive event management for brand launches, awards ceremonies, summits, and conferences in Brasília."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://michellemilaneventos.com.br/en/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the practical difference between full-service planning and day-of coordination?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Full-service wedding planning (Firenze) guides couples from the earliest concept — encompassing budget management, master timeline creation, curation of premier venues and vendors, and design styling. Day-of coordination (Capri) steps in 30 to 45 days prior, dedicated to aligning booked vendors, directing the rehearsal, and executing flawless ceremonial and reception protocols."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How far in advance should I start planning a wedding or luxury event in Brasília?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We recommend starting 10 to 18 months in advance for weddings and milestone celebrations in Brasília, ensuring first choice of sought-after venues (such as Lago Sul private estates and premier clubs) and peak calendar dates (May, September, October, and December). For intimate weddings or day-of coordination, 3 to 6 months is comfortably viable."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Michelle Milan coordinate events at outdoor venues, private estates in Lago Sul / Park Way, and embassies?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! We possess extensive expertise coordinating open-air ceremonies, scenic estates, private mansions in Lago Sul, Park Way (SMPW), Jardim Botânico, and diplomatic embassies. We master outdoor logistics, scenic lighting, weather contingency infrastructure, and the refined diplomatic protocol required for high-profile venues."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the initial consultation and custom proposal process work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The initial consultation is entirely complimentary and commitment-free. We meet to understand your vision, aesthetic preferences, estimated guest count, and investment expectations. From this strategic brief, we present a tailored proposal detailing the exact scope of planning services suited to your celebration."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can coordination and vendor communications be conducted in English for international couples or foreign guests?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely. We provide full bilingual coordination (Portuguese & English) for multicultural couples, diplomatic delegations, and destination wedding guests. Planning sessions, vendor briefings, timeline documents, and on-site ceremonial guidance are conducted fluently, ensuring seamless hospitality for international families."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- ============================================================
+       GOOGLE FONTS — Luxury Typography
+       Cormorant Garamond : Elegant Serif Headings
+       Montserrat          : Modern Sans-Serif Body
+       Great Vibes         : Calligraphic Accent
+  ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" /></noscript>
+
+  <!-- ============================================================
+       MODULAR CSS — Cascading Architecture
+  ============================================================ -->
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/header.css" />
+  <link rel="stylesheet" href="../css/hero.css" />
+  <link rel="stylesheet" href="../css/sections.css" />
+  <link rel="stylesheet" href="../css/gallery.css" />
+  <link rel="stylesheet" href="../css/faq.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/floating-wpp.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       HEADER — Main Navigation
+  ============================================================ -->
+  <header id="site-header" class="site-header" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+
+      <!-- Logo / Brand -->
+      <a href="#hero" class="nav-logo" aria-label="Michelle Milan Events — Home">
+        <span class="logo-script">Michelle Milan</span>
+        <span class="logo-subtitle">Events &amp; Design</span>
+      </a>
+
+      <!-- Desktop Menu -->
+      <ul class="nav-menu" id="nav-menu" role="list">
+        <li><a href="#sobre" class="nav-link" id="nav-sobre">About</a></li>
+        <li><a href="#servicos" class="nav-link" id="nav-servicos">Services</a></li>
+        <li><a href="#portfolio" class="nav-link" id="nav-portfolio">Portfolio</a></li>
+        <li><a href="#faq" class="nav-link" id="nav-faq">FAQ</a></li>
+        <li>
+          <a href="https://wa.me/5561992443814?text=Hello%20Michelle,%20I%20visited%20your%20website%20and%20would%20like%20more%20information%20about%20event%20planning%20in%20Bras%C3%ADlia."
+            class="nav-cta" id="nav-cta-contato" target="_blank" rel="noopener noreferrer"
+            aria-label="Contact Michelle Milan on WhatsApp">Contact</a>
+        </li>
+        <li class="nav-item-lang">
+          <div class="lang-switcher" aria-label="Language selector">
+            <a href="../" class="lang-btn" title="Mudar para Português">PT</a>
+            <span class="lang-divider">/</span>
+            <span class="lang-btn active">EN</span>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Hamburger Button (Mobile) -->
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false"
+        aria-controls="nav-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+    </nav>
+
+    <!-- Mobile Menu Backdrop -->
+    <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+
+  </header>
+
+  <!-- ============================================================
+       MAIN — Main Content
+  ============================================================ -->
+  <main id="main-content" role="main">
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 1: HERO — Impact Presentation
+    ══════════════════════════════════════════════════════════ -->
+    <section id="hero" class="section-hero" aria-label="Michelle Milan Presentation">
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <span class="hero-subtitle">BESPOKE PLANNING &amp; EXCLUSIVE EVENTS</span>
+        <h1 class="hero-title">
+          Luxury Event Planning <em>in Brasília</em>
+        </h1>
+        <p class="hero-description">
+          Planning and coordination for weddings and exclusive events.<br class="desktop-only" />
+          Every detail curated with elegance and absolute dedication.
+        </p>
+        <div class="hero-actions">
+          <a href="https://wa.me/5561992443814?text=Hello%20Michelle,%20I%20visited%20your%20website%20and%20would%20like%20more%20information%20about%20event%20planning%20in%20Bras%C3%ADlia."
+            class="btn btn-primary" id="hero-cta-wpp" target="_blank" rel="noopener noreferrer"
+            aria-label="Connect with Michelle Milan on WhatsApp">Talk to Michelle</a>
+          <a href="#portfolio" class="btn btn-secondary" id="hero-cta-portfolio">
+            View Portfolio
+          </a>
+        </div>
+      </div>
+
+      <!-- Michelle Photo -->
+      <div class="hero-image-wrapper">
+        <div class="hero-image-frame">
+          <img src="../assets/michele.webp" alt="Michelle Milan - Luxury Wedding Planner and Event Designer in Brasília DF" class="hero-image" loading="eager"
+            fetchpriority="high" width="480" height="600" />
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <span class="scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 2: ABOUT — Who is Michelle Milan
+    ══════════════════════════════════════════════════════════ -->
+    <section id="sobre" class="section-about" aria-labelledby="sobre-titulo">
+      <div class="container">
+        <div class="about-grid">
+
+          <div class="about-image-wrapper">
+            <div class="about-image-frame">
+              <img src="../assets/michele.webp" alt="Michelle Milan - Luxury Wedding Planner and Event Designer in Brasília DF" class="about-image"
+                loading="lazy" width="420" height="520" />
+            </div>
+            <div class="about-badge" aria-hidden="true">
+              <span class="badge-number">10+</span>
+              <span class="badge-text">Years of<br />experience</span>
+            </div>
+          </div>
+
+          <div class="about-content">
+            <p class="section-eyebrow">Meet the Creator</p>
+            <h2 id="sobre-titulo" class="section-title">
+              Michelle Milan<br /><em>Luxury Wedding Planner in Brasília</em>
+            </h2>
+            <div class="about-divider" aria-hidden="true"></div>
+            <p class="about-text">
+              Michelle Milan is an event planner specializing in high-end celebrations, combining artistic sensitivity and
+              operational precision to craft truly unforgettable moments.
+            </p>
+            <p class="about-text">
+              With over a decade orchestrating weddings, debutante galas, and bespoke private events in Brasília, each celebration is treated as a unique masterpiece — from meticulous conceptualization to flawless execution, ensuring every detail mirrors the dreams and personal style of our clients.
+            </p>
+            <ul class="about-highlights" aria-label="Michelle Milan Distinctions">
+              <li class="highlight-item">
+                <span class="highlight-icon" aria-hidden="true">✦</span>
+                <span>Exclusive and personalized service</span>
+              </li>
+              <li class="highlight-item">
+                <span class="highlight-icon" aria-hidden="true">✦</span>
+                <span>Curated network of selected premier vendors</span>
+              </li>
+              <li class="highlight-item">
+                <span class="highlight-icon" aria-hidden="true">✦</span>
+                <span>Over 500 successful celebrations executed</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 3: SERVICES — Planning Packages (Firenze, Venezia, Capri, Milano)
+    ══════════════════════════════════════════════════════════ -->
+    <section id="servicos" class="section-services" aria-labelledby="servicos-titulo">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-eyebrow">Our Services</p>
+          <h2 id="servicos-titulo" class="section-title">
+            Bespoke Planning &amp; Coordination<br /><em>in Brasília</em>
+          </h2>
+          <p class="section-subtitle">
+            Each package is designed to deliver a singular experience, tailored to the scale and vision of your celebration.
+          </p>
+        </div>
+
+        <div class="services-grid" role="list">
+
+          <!-- Package 1: Firenze -->
+          <article class="service-card" id="servico-firenze" role="listitem" aria-labelledby="firenze-titulo">
+            <div class="service-card-inner">
+              <div class="service-icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <p class="service-tag">Full-Service Planning</p>
+              <h3 id="firenze-titulo" class="service-name">Firenze</h3>
+              <div class="service-divider" aria-hidden="true"></div>
+              <p class="service-description">
+                Full-Service Wedding Planning for luxury celebrations: meticulous budget management, premier venue curation across Brasília, and elite vendor coordination for an unforgettable celebration.
+              </p>
+              <ul class="service-features" aria-label="Features included in Firenze package">
+                <li>Comprehensive financial &amp; budget control</li>
+                <li>Premier venue curation &amp; vendor selection</li>
+                <li>Master timeline &amp; technical venue visits</li>
+                <li>Full day-of coordination &amp; ceremonial direction</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Package 2: Venezia — Featured -->
+          <article class="service-card service-card--featured" id="servico-venezia" role="listitem"
+            aria-labelledby="venezia-titulo">
+            <div class="service-card-inner">
+              <div class="service-badge-featured" aria-label="Most popular package">Most Popular</div>
+              <div class="service-icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+              </div>
+              <p class="service-tag">Partial Planning</p>
+              <h3 id="venezia-titulo" class="service-name">Venezia</h3>
+              <div class="service-divider" aria-hidden="true"></div>
+              <p class="service-description">
+                Partial planning &amp; final coordination: designed for couples with key bookings secured. We construct the master timeline and lead technical vendor alignment across the final 60 days.
+              </p>
+              <ul class="service-features" aria-label="Features included in Venezia package">
+                <li>Audit of pre-booked vendor contracts</li>
+                <li>Technical alignment across final 60 days</li>
+                <li>Master protocol &amp; timeline design</li>
+                <li>Complete on-site day-of management</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Package 3: Capri -->
+          <article class="service-card" id="servico-capri" role="listitem" aria-labelledby="capri-titulo">
+            <div class="service-card-inner">
+              <div class="service-icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+              </div>
+              <p class="service-tag">Day-Of Coordination</p>
+              <h3 id="capri-titulo" class="service-name">Capri</h3>
+              <div class="service-divider" aria-hidden="true"></div>
+              <p class="service-description">
+                Day-Of Coordination &amp; Event Direction: absolute peace of mind dedicated to flawless execution of the ceremony and reception, rehearsal oversight, processional direction, and setup supervision.
+              </p>
+              <ul class="service-features" aria-label="Features included in Capri package">
+                <li>Operational handover 30 to 45 days prior</li>
+                <li>Ceremony rehearsal &amp; protocol direction</li>
+                <li>Setup supervision &amp; vendor synchronization</li>
+                <li>Flawless ceremony &amp; reception execution</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Package 4: Milano -->
+          <article class="service-card service-card--dark" id="servico-milano" role="listitem"
+            aria-labelledby="milano-titulo">
+            <div class="service-card-inner">
+              <div class="service-icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="12" cy="8" r="6" />
+                  <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+                </svg>
+              </div>
+              <p class="service-tag">Social Galas</p>
+              <h3 id="milano-titulo" class="service-name">Milano</h3>
+              <div class="service-divider" aria-hidden="true"></div>
+              <p class="service-description">
+                Debutante 15th galas, anniversaries, and bespoke social celebrations: tailored production for themed receptions and exclusive galas with refined protocol management and artistic staging.
+              </p>
+              <ul class="service-features" aria-label="Features included in Milano package">
+                <li>15th birthday galas &amp; milestone anniversaries</li>
+                <li>Waltz choreography &amp; protocol coordination</li>
+                <li>Themed events &amp; exclusive receptions</li>
+                <li>Dedicated peace of mind for the hosts</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Services CTA -->
+        <div class="services-cta">
+          <p class="services-cta-text">Unsure which package suits your event best?</p>
+          <a href="https://wa.me/5561992443814?text=Hello%20Michelle,%20I%20visited%20your%20website%20and%20would%20like%20more%20information%20about%20event%20planning%20in%20Bras%C3%ADlia."
+            class="btn btn-primary" id="servicos-cta-wpp" target="_blank" rel="noopener noreferrer"
+            aria-label="Request consultation on WhatsApp">Request Consultation</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 4: PORTFOLIO — Gallery of Celebrations
+    ══════════════════════════════════════════════════════════ -->
+    <section id="portfolio" class="section-gallery" aria-labelledby="portfolio-titulo">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">Portfolio</p>
+          <h2 id="portfolio-titulo" class="section-title">
+            Weddings &amp; Celebrations<br /><em>in Brasília</em>
+          </h2>
+          <p class="section-subtitle">A curated selection of our most memorable celebrations.</p>
+        </div>
+      </div>
+
+      <!-- Gallery Grid — Full-Width Outside Container -->
+      <div class="gallery-grid" id="gallery-grid" role="list" aria-label="Gallery of curated events">
+
+        <article class="gallery-item" id="gallery-item-1" role="listitem">
+          <button class="gallery-item-btn" aria-label="View celebration 1 in larger view" data-index="0">
+            <img src="../assets/decoracao-1.webp" alt="Fine dessert table for a classic luxury wedding in Lago Sul, Brasília - Michelle Milan Events"
+              class="gallery-img" loading="lazy" width="600" height="400" />
+            <div class="gallery-overlay" aria-hidden="true"><span class="gallery-zoom-icon">+</span></div>
+          </button>
+        </article>
+
+        <article class="gallery-item gallery-item--tall" id="gallery-item-2" role="listitem">
+          <button class="gallery-item-btn" aria-label="View celebration 2 in larger view" data-index="1">
+            <img src="../assets/decoracao-2.webp" alt="Exquisite floral arrangement for a private social gala in Park Way DF - Event Planning"
+              class="gallery-img" loading="lazy" width="600" height="800" />
+            <div class="gallery-overlay" aria-hidden="true"><span class="gallery-zoom-icon">+</span></div>
+          </button>
+        </article>
+
+        <article class="gallery-item" id="gallery-item-3" role="listitem">
+          <button class="gallery-item-btn" aria-label="View celebration 3 in larger view" data-index="2">
+            <img src="../assets/decoracao-3.webp" alt="Outdoor wedding ceremony decoration at Setor de Clubes Sul, Brasília"
+              class="gallery-img" loading="lazy" width="600" height="400" />
+            <div class="gallery-overlay" aria-hidden="true"><span class="gallery-zoom-icon">+</span></div>
+          </button>
+        </article>
+
+        <article class="gallery-item gallery-item--wide" id="gallery-item-4" role="listitem">
+          <button class="gallery-item-btn" aria-label="View celebration 4 in larger view" data-index="3">
+            <img src="../assets/decoracao-4.webp" alt="Luxurious ambiance and scenic lighting for a wedding reception in Brasília DF"
+              class="gallery-img" loading="lazy" width="1200" height="400" />
+            <div class="gallery-overlay" aria-hidden="true"><span class="gallery-zoom-icon">+</span></div>
+          </button>
+        </article>
+
+        <article class="gallery-item" id="gallery-item-5" role="listitem">
+          <button class="gallery-item-btn" aria-label="View celebration 5 in larger view" data-index="4">
+            <img src="../assets/decoracao-5.webp" alt="Sophisticated banquet tablescape for a luxury 15th birthday celebration in Brasília"
+              class="gallery-img" loading="lazy" width="600" height="400" />
+            <div class="gallery-overlay" aria-hidden="true"><span class="gallery-zoom-icon">+</span></div>
+          </button>
+        </article>
+
+        <article class="gallery-item gallery-item--tall" id="gallery-item-6" role="listitem">
+          <button class="gallery-item-btn" aria-label="View celebration 6 in larger view" data-index="5">
+            <img src="../assets/decoracao-6.webp" alt="Suspended floral installation details for an upscale wedding in Lago Norte, Brasília"
+              class="gallery-img" loading="lazy" width="600" height="800" />
+            <div class="gallery-overlay" aria-hidden="true"><span class="gallery-zoom-icon">+</span></div>
+          </button>
+        </article>
+
+        <article class="gallery-item" id="gallery-item-7" role="listitem">
+          <button class="gallery-item-btn" aria-label="View celebration 7 in larger view" data-index="6">
+            <img src="../assets/decoracao-7.webp" alt="Complete ceremonial altar design for an intimate garden wedding in Jardim Botânico DF"
+              class="gallery-img" loading="lazy" width="600" height="400" />
+            <div class="gallery-overlay" aria-hidden="true"><span class="gallery-zoom-icon">+</span></div>
+          </button>
+        </article>
+
+      </div>
+
+      <!-- Lightbox Modal -->
+      <div class="gallery-modal" id="gallery-modal" role="dialog" aria-modal="true"
+        aria-label="Enlarged image view" aria-hidden="true">
+        <div class="modal-backdrop" id="modal-backdrop"></div>
+        <div class="modal-content">
+          <button class="modal-close" id="modal-close" aria-label="Close view"><span
+              aria-hidden="true">&times;</span></button>
+          <button class="modal-prev" id="modal-prev" aria-label="Previous image"><span
+              aria-hidden="true">&#8592;</span></button>
+          <img src="" alt="Enlarged view of Michelle Milan event decor portfolio" class="modal-image" id="modal-image" loading="lazy" decoding="async">
+          <button class="modal-next" id="modal-next" aria-label="Next image"><span
+              aria-hidden="true">&#8594;</span></button>
+          <p class="modal-counter" id="modal-counter" aria-live="polite"></p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 5: FAQ — Frequently Asked Questions
+    ══════════════════════════════════════════════════════════ -->
+    <section id="faq" class="section-faq" aria-labelledby="faq-titulo">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-eyebrow">FAQ</p>
+          <h2 id="faq-titulo" class="section-title">
+            Frequently Asked Questions<br /><em>About Event Planning in Brasília</em>
+          </h2>
+        </div>
+
+        <div class="faq-list" role="list">
+
+          <details class="faq-item" id="faq-item-1" role="listitem">
+            <summary class="faq-question" id="faq-q1">
+              <span>What is the practical difference between full-service planning and day-of coordination?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p><strong>Full-service wedding planning (Firenze)</strong> guides couples from the earliest concept — encompassing budget management, master timeline creation, curation of premier venues and vendors, and design styling. <strong>Day-of coordination (Capri)</strong> steps in 30 to 45 days prior, dedicated to aligning booked vendors, directing the rehearsal, and executing flawless ceremonial and reception protocols.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" id="faq-item-2" role="listitem">
+            <summary class="faq-question" id="faq-q2">
+              <span>How far in advance should I start planning a wedding or luxury event in Brasília?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>We recommend starting <strong>10 to 18 months in advance</strong> for weddings and milestone celebrations in Brasília, ensuring first choice of sought-after venues (such as Lago Sul private estates and premier clubs) and peak calendar dates (May, September, October, and December). For intimate weddings or day-of coordination, <strong>3 to 6 months</strong> is comfortably viable.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" id="faq-item-3" role="listitem">
+            <summary class="faq-question" id="faq-q3">
+              <span>Does Michelle Milan coordinate events at outdoor venues, private estates in Lago Sul / Park Way, and embassies?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Yes! We possess extensive expertise coordinating <strong>open-air ceremonies, scenic estates, private mansions in Lago Sul, Park Way (SMPW), Jardim Botânico, and diplomatic embassies</strong>. We master outdoor logistics, scenic lighting, weather contingency infrastructure, and the refined diplomatic protocol required for high-profile venues.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" id="faq-item-4" role="listitem">
+            <summary class="faq-question" id="faq-q4">
+              <span>How does the initial consultation and custom proposal process work?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>The initial consultation is <strong>entirely complimentary and commitment-free</strong>. We meet to understand your vision, aesthetic preferences, estimated guest count, and investment expectations. From this strategic brief, we present a <strong>tailored proposal</strong> detailing the exact scope of planning services suited to your celebration.</p>
+            </div>
+          </details>
+
+          <details class="faq-item" id="faq-item-5" role="listitem">
+            <summary class="faq-question" id="faq-q5">
+              <span>Can coordination and vendor communications be conducted in English for international couples or foreign guests?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Absolutely. We provide <strong>full bilingual coordination (Portuguese &amp; English)</strong> for multicultural couples, diplomatic delegations, and destination wedding guests. Planning sessions, vendor briefings, timeline documents, and on-site ceremonial guidance are conducted fluently, ensuring seamless hospitality for international families.</p>
+            </div>
+          </details>
+
+        </div>
+
+        <div class="faq-cta">
+          <p>Still have questions? I am here to help.</p>
+          <a href="https://wa.me/5561992443814?text=Hello%20Michelle,%20I%20visited%20your%20website%20and%20would%20like%20more%20information%20about%20your%20events."
+            class="btn btn-primary" id="faq-cta-wpp" target="_blank" rel="noopener noreferrer"
+            aria-label="Ask questions on WhatsApp">Chat on WhatsApp</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 6: REGIONAL COVERAGE (Strategic Local Presence)
+    ============================================================ -->
+    <section class="section coverage-section" id="cobertura" aria-label="Event Coordination Across Brasília and Region">
+      <div class="container">
+        <div class="section-header text-center">
+          <p class="section-eyebrow coverage-eyebrow">Exclusive Service</p>
+          <h2 class="section-title">
+            Service Throughout Brasília &amp;<br class="desktop-only" />
+            <em>Surrounding Region</em>
+          </h2>
+          <div class="gold-divider" aria-hidden="true"></div>
+          <p class="section-subtitle coverage-subtitle">
+            From intimate ceremonies to grand receptions: personalized planning in Brasília’s premier venues, private clubs, and mansions, including integrated surrounding areas.
+          </p>
+        </div>
+
+        <div class="coverage-grid" role="list">
+          <article class="coverage-card" role="listitem">
+            <div class="coverage-card-header">
+              <span class="coverage-card-icon" aria-hidden="true">✦</span>
+              <h3 class="coverage-card-title">Prime Areas &amp; Mansions</h3>
+            </div>
+            <p>Lago Sul, Lago Norte, Park Way (SMPW), Jardim Botânico, and Noroeste.</p>
+          </article>
+
+          <article class="coverage-card" role="listitem">
+            <div class="coverage-card-header">
+              <span class="coverage-card-icon" aria-hidden="true">✦</span>
+              <h3 class="coverage-card-title">Central Region &amp; Clubs</h3>
+            </div>
+            <p>Plano Piloto (Asa Sul and Asa Norte), Sudoeste, Setor de Clubes, and Cruzeiro.</p>
+          </article>
+
+          <article class="coverage-card" role="listitem">
+            <div class="coverage-card-header">
+              <span class="coverage-card-icon" aria-hidden="true">✦</span>
+              <h3 class="coverage-card-title">Urban Centers &amp; Event Spaces</h3>
+            </div>
+            <p>Águas Claras, Taguatinga, Vicente Pires, Guará, Ceilândia, and Samambaia.</p>
+          </article>
+
+          <article class="coverage-card" role="listitem">
+            <div class="coverage-card-header">
+              <span class="coverage-card-icon" aria-hidden="true">✦</span>
+              <h3 class="coverage-card-title">All Administrative Regions &amp; Surroundings (RIDE)</h3>
+            </div>
+            <p>Gama, Sobradinho, Planaltina, Santa Maria, and surrounding RIDE municipalities.</p>
+          </article>
+        </div>
+        
+        <div class="coverage-footnote text-center">
+          <p>Events executed with complete logistical support across any location in the Federal District.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER — Site Footer
+  ============================================================ -->
+  <footer id="site-footer" class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <p class="footer-logo-script">Michelle Milan</p>
+          <p class="footer-logo-sub">Events &amp; Coordination</p>
+          <p class="footer-tagline">
+            Transforming dreams into timeless celebrations. With grace, discernment, and meticulous attention to every detail.
+          </p>
+          <div class="footer-social" aria-label="Social media">
+            <a href="https://instagram.com/michellemilaneventos" class="social-link" id="footer-instagram"
+              target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="https://wa.me/5561992443814?text=Hello%20Michelle,%20I%20visited%20your%20website%20and%20would%20like%20more%20information%20about%20event%20planning%20in%20Bras%C3%ADlia."
+              class="social-link" id="footer-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                aria-hidden="true">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              </svg>
+            </a>
+            <a href="https://pinterest.com/michellemilaneventos" class="social-link" id="footer-pinterest"
+              target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                aria-hidden="true">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.03-2.83.19-.77 1.27-5.38 1.27-5.38s-.32-.65-.32-1.61c0-1.51.88-2.64 1.97-2.64.93 0 1.38.7 1.38 1.54 0 .94-.6 2.34-.91 3.64-.26 1.09.54 1.97 1.6 1.97 1.92 0 3.4-2.02 3.4-4.95 0-2.59-1.86-4.4-4.52-4.4-3.08 0-4.89 2.31-4.89 4.7 0 .93.36 1.93.8 2.47a.26.26 0 0 1 .07.31c-.08.33-.26 1.09-.3 1.24-.05.2-.17.24-.39.14-1.39-.65-2.26-2.68-2.26-4.32 0-3.51 2.55-6.74 7.36-6.74 3.86 0 6.86 2.75 6.86 6.42 0 3.83-2.41 6.9-5.76 6.9-1.13 0-2.19-.59-2.55-1.28l-.69 2.6c-.25.96-.93 2.16-1.39 2.89.05.01.1.02.15.02C17.52 22 22 17.52 22 12 22 6.48 17.52 2 12 2z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Navigation -->
+        <nav class="footer-nav" aria-label="Quick links">
+          <h3 class="footer-nav-title">Quick Links</h3>
+          <ul role="list">
+            <li><a href="#sobre" class="footer-link">About Michelle</a></li>
+            <li><a href="#servicos" class="footer-link">Services</a></li>
+            <li><a href="#portfolio" class="footer-link">Portfolio</a></li>
+            <li><a href="#faq" class="footer-link">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <!-- Column 3: Contact -->
+        <div class="footer-contact">
+          <h3 class="footer-nav-title">Contact</h3>
+          <ul role="list" class="footer-contact-list">
+            <li>
+              <a href="https://wa.me/5561992443814?text=Hello%20Michelle,%20I%20visited%20your%20website%20and%20would%20like%20more%20information%20about%20event%20planning%20in%20Bras%C3%ADlia."
+                class="footer-link footer-link--contact" target="_blank" rel="noopener noreferrer"
+                aria-label="WhatsApp">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  aria-hidden="true">
+                  <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                </svg>
+                +55 (61) 99244-3814
+              </a>
+            </li>
+            <li>
+              <a href="mailto:michellemilaneventos@gmail.com" class="footer-link footer-link--contact"
+                aria-label="Email">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                michellemilaneventos@gmail.com
+              </a>
+            </li>
+            <li>
+              <span class="footer-link footer-link--contact">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                  aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                Brasília — Brazil
+              </span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="footer-year"></span> Michelle Milan Events - Brasília &amp; Region. All rights reserved.</p>
+        <p class="footer-credit">Crafted with &#10084; for unforgettable moments.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       FLOATING WHATSAPP BUTTON
+  ============================================================ -->
+  <a href="https://wa.me/5561992443814?text=Hello%20Michelle,%20I%20visited%20your%20website%20and%20would%20like%20more%20information%20about%20event%20planning%20in%20Bras%C3%ADlia."
+    class="floating-wpp" id="floating-wpp-btn" target="_blank" rel="noopener noreferrer"
+    aria-label="Connect with Michelle Milan on WhatsApp" title="Connect on WhatsApp">
+    <svg class="floating-wpp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+      aria-hidden="true" width="28" height="28">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+    </svg>
+    <span class="floating-wpp-tooltip" aria-hidden="true">Chat with me!</span>
+  </a>
+
+  <!-- ============================================================
+       JAVASCRIPT — Deferred Loading at Body End
+  ============================================================ -->
+  <script src="../js/gallery.js" defer></script>
+  <script src="../js/main.js" defer></script>
+
+</body>
+
+</html>

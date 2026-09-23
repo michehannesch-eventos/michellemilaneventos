@@ -1,0 +1,532 @@
+/* ================================================================
+   HERO.CSS — Seção Principal de Impacto Michelle Milan Eventos
+   ----------------------------------------------------------------
+   Conteúdo:
+   1. Layout Base da Seção Hero
+   2. Overlay & Fundo
+   3. Conteúdo Textual (eyebrow, h1, descrição, botões)
+   4. Imagem da Michelle (moldura sofisticada)
+   5. Indicador de Scroll
+   6. Stats / Números
+   7. Animações de Entrada
+   8. Responsive (tablet e desktop)
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   1. LAYOUT BASE — Mobile First
+   ---------------------------------------------------------------- */
+.section-hero {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: calc(80px + var(--space-12)) var(--space-6) var(--space-20);
+  overflow: hidden;
+  background-color: var(--color-dark-deep);
+  gap: var(--space-12);
+}
+
+/* ----------------------------------------------------------------
+   2. OVERLAY & FUNDO TEXTURADO
+   ---------------------------------------------------------------- */
+
+/* Gradiente de fundo principal */
+.section-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 75% 50%, rgba(201, 168, 76, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 80% at 10% 80%, rgba(212, 184, 150, 0.04) 0%, transparent 60%),
+    linear-gradient(160deg, #0d0c0a 0%, #16140f 50%, #0d0c0a 100%);
+  z-index: 0;
+}
+
+/* Textura de grão sutil */
+.section-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Overlay escuro sobre conteúdo da imagem (mobile) */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 12, 10, 0.20) 0%,
+    rgba(13, 12, 10, 0.60) 70%,
+    rgba(13, 12, 10, 0.95) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ----------------------------------------------------------------
+   3. CONTEÚDO TEXTUAL
+   ---------------------------------------------------------------- */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 620px;
+  width: 100%;
+  order: 2; /* Texto abaixo da imagem no mobile */
+}
+
+/* Eyebrow / Subtitle */
+.hero-eyebrow,
+.hero-subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs, 0.75rem);
+  font-weight: var(--fw-semibold, 600);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-gold, #c9a84c);
+  margin-bottom: var(--space-4, 1rem);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3, 0.75rem);
+
+  /* Animação de entrada */
+  opacity: 0;
+  animation: heroFadeUp 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards;
+}
+
+/* Linhas decorativas ao redor do eyebrow / subtitle */
+.hero-eyebrow::before,
+.hero-eyebrow::after,
+.hero-subtitle::before,
+.hero-subtitle::after {
+  content: '';
+  flex: 1;
+  max-width: 40px;
+  height: 1px;
+  background: var(--gradient-gold, linear-gradient(90deg, transparent, #c9a84c, transparent));
+  opacity: 0.6;
+}
+
+/* Título H1 */
+.hero-title {
+  font-family: var(--font-serif, "Playfair Display", serif);
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #f7f6f2;
+  margin: 0.8rem 0 1.5rem 0;
+  letter-spacing: -0.01em;
+  word-break: normal;
+
+  /* Animação de entrada */
+  opacity: 0;
+  animation: heroFadeUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s forwards;
+}
+
+.hero-title em {
+  display: block;
+  font-family: var(--font-serif, "Playfair Display", serif);
+  font-style: italic;
+  color: var(--color-gold, #c9a84c);
+  font-weight: 400;
+  margin-top: 0.2rem;
+}
+
+/* Descrição */
+.hero-description {
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-light);
+  line-height: 1.9;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-10);
+  letter-spacing: 0.03em;
+  max-width: 480px;
+
+  /* Animação de entrada */
+  opacity: 0;
+  animation: heroFadeUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s forwards;
+}
+
+/* ── Botões de Ação ───────────────────────────────────────────── */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+  justify-content: center;
+
+  /* Animação de entrada */
+  opacity: 0;
+  animation: heroFadeUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s forwards;
+}
+
+/* Shimmer no botão primário do hero */
+.hero-actions .btn-primary {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-4) var(--space-10);
+  font-size: var(--fs-sm);
+}
+
+.hero-actions .btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 100%
+  );
+  animation: btnShimmer 3.5s ease-in-out 2s infinite;
+}
+
+.hero-actions .btn-secondary {
+  padding: var(--space-4) var(--space-10);
+  font-size: var(--fs-sm);
+}
+
+/* ----------------------------------------------------------------
+   4. IMAGEM DA MICHELLE — Moldura Sofisticada
+   ---------------------------------------------------------------- */
+.hero-image-wrapper {
+  position: relative;
+  z-index: 3;
+  order: 1; /* Imagem acima do texto no mobile */
+  display: flex;
+  justify-content: center;
+
+  /* Animação de entrada */
+  opacity: 0;
+  animation: heroImageIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+}
+
+/* Moldura externa — borda dourada com cantos ornamentais */
+.hero-image-frame {
+  position: relative;
+  width: min(280px, 70vw);
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  flex-shrink: 0;
+
+  /* Borda interna dourada */
+  box-shadow:
+    0 0 0 1px rgba(201, 168, 76, 0.30),
+    0 0 0 6px rgba(13, 12, 10, 0.80),
+    0 0 0 7px rgba(201, 168, 76, 0.15),
+    var(--shadow-dark-lg);
+
+  background: var(--color-dark-soft);
+}
+
+/* Cantos ornamentais (pseudo-elementos) */
+.hero-image-frame::before,
+.hero-image-frame::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  z-index: 4;
+  opacity: 0.7;
+}
+
+/* Canto superior esquerdo */
+.hero-image-frame::before {
+  top: 12px;
+  left: 12px;
+  border-top: 1px solid var(--color-gold);
+  border-left: 1px solid var(--color-gold);
+}
+
+/* Canto inferior direito */
+.hero-image-frame::after {
+  bottom: 12px;
+  right: 12px;
+  border-bottom: 1px solid var(--color-gold);
+  border-right: 1px solid var(--color-gold);
+}
+
+/* Imagem em si */
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: contrast(1.04) brightness(0.95);
+  transition: transform var(--transition-luxury), filter var(--transition-luxury);
+}
+
+.hero-image-frame:hover .hero-image {
+  transform: scale(1.03);
+  filter: contrast(1.06) brightness(1.0);
+}
+
+/* Gradiente sobre a imagem (base) */
+.hero-image-frame > .hero-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 60%,
+    rgba(13, 12, 10, 0.40) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Ornamento decorativo — linha dourada lateral */
+.hero-image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: -16px;
+  width: 1px;
+  height: 80%;
+  background: var(--gradient-gold);
+  opacity: 0.25;
+  transform-origin: top;
+  animation: lineGrow 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s forwards;
+  transform: scaleY(0);
+}
+
+/* Ornamento — ponto dourado */
+.hero-image-wrapper::after {
+  content: '✦';
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--fs-xs);
+  color: var(--color-gold);
+  opacity: 0.5;
+  letter-spacing: 0.5em;
+  animation: fadeIn 1s ease 1.5s forwards;
+  opacity: 0;
+}
+
+/* ----------------------------------------------------------------
+   5. INDICADOR DE SCROLL
+   ---------------------------------------------------------------- */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+
+  opacity: 0;
+  animation: fadeIn 1s ease 1.8s forwards;
+}
+
+.scroll-line {
+  display: block;
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(
+    to bottom,
+    rgba(201, 168, 76, 0.8),
+    rgba(201, 168, 76, 0)
+  );
+  animation: scrollPulse 2.5s ease-in-out 2s infinite;
+  transform-origin: top;
+}
+
+/* ----------------------------------------------------------------
+   6. ANIMAÇÕES DE ENTRADA
+   ---------------------------------------------------------------- */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroImageIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes scrollPulse {
+  0%, 100% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  30%, 70% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes btnShimmer {
+  0%   { left: -100%; }
+  100% { left:  200%; }
+}
+
+/* ----------------------------------------------------------------
+   7. RESPONSIVE — Tablet (768px+)
+   ---------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .section-hero {
+    padding: calc(80px + var(--space-16)) var(--space-8) var(--space-20);
+    gap: var(--space-16);
+  }
+
+  .hero-image-frame {
+    width: 340px;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 6vw, 5rem);
+  }
+}
+
+/* ----------------------------------------------------------------
+   8. RESPONSIVE — Desktop (1024px+)
+   ---------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  .section-hero {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 100px var(--space-12) 60px;
+    gap: 0;
+    min-height: 100dvh;
+  }
+
+  .hero-overlay {
+    background: var(--gradient-overlay);
+  }
+
+  /* Conteúdo à esquerda */
+  .hero-content {
+    order: 1;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 560px;
+    flex: 1;
+    padding-right: var(--space-12);
+  }
+
+  .hero-eyebrow {
+    justify-content: flex-start;
+  }
+
+  .hero-eyebrow::before {
+    display: none; /* Remove linha antes no desktop */
+  }
+
+  .hero-eyebrow::after {
+    max-width: 32px;
+  }
+
+  .hero-actions {
+    justify-content: flex-start;
+  }
+
+  /* Imagem à direita */
+  .hero-image-wrapper {
+    order: 2;
+    flex: 0 0 auto;
+    position: relative;
+    z-index: 3;
+    opacity: 0;
+    animation: heroImageIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s forwards;
+  }
+
+  .hero-image-frame {
+    width: 380px;
+    aspect-ratio: 3 / 4;
+
+    /* Moldura mais elaborada no desktop */
+    box-shadow:
+      0 0 0 1px rgba(201, 168, 76, 0.35),
+      0 0 0 8px rgba(13, 12, 10, 0.80),
+      0 0 0 9px rgba(201, 168, 76, 0.18),
+      48px 48px 96px rgba(0, 0, 0, 0.70),
+      -8px -8px 32px rgba(201, 168, 76, 0.06);
+  }
+
+  /* Cantos maiores no desktop */
+  .hero-image-frame::before,
+  .hero-image-frame::after {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+
+
+/* ----------------------------------------------------------------
+   9. RESPONSIVE — Wide Desktop (1200px+)
+   ---------------------------------------------------------------- */
+@media (min-width: 1200px) {
+  .hero-content {
+    max-width: 620px;
+  }
+
+  .hero-image-frame {
+    width: 440px;
+  }
+}
+
+/* ----------------------------------------------------------------
+   10. RESPONSIVE — Ultra Wide (1400px+)
+   ---------------------------------------------------------------- */
+@media (min-width: 1400px) {
+  .hero-image-frame {
+    width: 480px;
+  }
+}
+
+/* ----------------------------------------------------------------
+   11. RESPONSIVE — Short Screens (Landscape Notebooks)
+   ---------------------------------------------------------------- */
+@media (min-width: 1024px) and (max-height: 780px) {
+  .section-hero {
+    padding-top: 88px;
+    padding-bottom: 40px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: var(--space-4);
+  }
+
+  .hero-description {
+    margin-bottom: var(--space-6);
+  }
+
+  .hero-image-frame {
+    width: min(340px, 45vh);
+  }
+}

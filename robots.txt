@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /assets/*.pdf$
+
+# Sitemaps Oficiais
+Sitemap: https://michellemilaneventos.com.br/sitemap.xml

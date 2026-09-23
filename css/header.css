@@ -1,0 +1,547 @@
+/* ================================================================
+   HEADER.CSS — Navegação Principal Michelle Milan Eventos
+   ----------------------------------------------------------------
+   Conteúdo:
+   1. Header Base & Glassmorphism
+   2. Logo / Marca
+   3. Menu Desktop
+   4. Botão CTA do Nav
+   5. Hamburguer (Mobile)
+   6. Menu Mobile (Drawer)
+   7. Header Scrolled (com fundo sólido)
+   8. Responsive
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   1. HEADER BASE & GLASSMORPHISM
+   ---------------------------------------------------------------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-header);
+  width: 100%;
+
+/* Estado inicial: transparente sobre o hero */
+  background: transparent;
+  transition:
+    padding var(--transition-slow);
+}
+
+/* Pseudo-elemento para o fundo e glassmorphism (evita bug de containing block) */
+.site-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: transparent;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition:
+    background-color var(--transition-slow),
+    backdrop-filter var(--transition-slow),
+    box-shadow var(--transition-slow);
+}
+
+/* Linha dourada decorativa no topo */
+.site-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gradient-gold);
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+  z-index: 1;
+}
+
+/* Estado: ao rolar a página (classe adicionada via JS) */
+.site-header.scrolled::after {
+  background: rgba(13, 12, 10, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 1px 0 rgba(201, 168, 76, 0.15),
+    var(--shadow-dark-sm);
+}
+
+.site-header.scrolled::before {
+  opacity: 1;
+}
+
+/* ----------------------------------------------------------------
+   2. CONTAINER DE NAV
+   ---------------------------------------------------------------- */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--space-5) var(--space-6);
+  gap: var(--space-8);
+  transition: padding var(--transition-slow);
+}
+
+/* Reduz o padding vertical ao rolar */
+.site-header.scrolled .nav-container {
+  padding-block: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .nav-container {
+    padding-inline: var(--space-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-container {
+    padding-inline: var(--space-12);
+  }
+}
+
+/* ----------------------------------------------------------------
+   3. LOGO / MARCA
+   ---------------------------------------------------------------- */
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: opacity var(--transition-base);
+  line-height: 1;
+}
+
+.nav-logo:hover {
+  opacity: 0.85;
+}
+
+.logo-script {
+  font-family: var(--font-script);
+  font-size: 2rem;
+  color: var(--color-gold-light);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  transition: color var(--transition-base);
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .logo-script {
+    font-size: 2.4rem;
+  }
+}
+
+.logo-subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-light);
+  letter-spacing: 0.30em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+  display: block;
+  transition: color var(--transition-base);
+}
+
+.nav-logo:hover .logo-subtitle {
+  color: var(--color-text-secondary);
+}
+
+/* ----------------------------------------------------------------
+   4. MENU DESKTOP
+   ---------------------------------------------------------------- */
+.nav-menu {
+  display: none; /* Oculto por padrão — Mobile First */
+  align-items: center;
+  gap: var(--space-8);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 1024px) {
+  .nav-menu {
+    display: flex;
+    position: relative;
+  }
+}
+
+/* Links de Navegação */
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: var(--space-1);
+  transition: color var(--transition-base);
+}
+
+/* Linha underline animada (efeito deslizante) */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--gradient-gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--color-gold-light);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Link ativo (classe adicionada via JS ao scroll) */
+.nav-link.active {
+  color: var(--color-gold);
+}
+
+.nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+  background: var(--gradient-gold);
+}
+
+/* ----------------------------------------------------------------
+   5. BOTÃO CTA DO NAV — "Contato"
+   ---------------------------------------------------------------- */
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-inverse);
+  text-decoration: none;
+  background: var(--gradient-gold);
+  padding: var(--space-2) var(--space-6);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-gold-sm);
+  white-space: nowrap;
+  transition:
+    box-shadow var(--transition-base),
+    transform var(--transition-base),
+    filter var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shimmer hover */
+.nav-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 100%
+  );
+  transition: left var(--transition-luxury);
+}
+
+.nav-cta:hover,
+.nav-cta:focus-visible {
+  box-shadow: var(--shadow-gold-md);
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.nav-cta:hover::before,
+.nav-cta:focus-visible::before {
+  left: 150%;
+}
+
+.nav-cta:active {
+  transform: translateY(0);
+}
+
+/* ----------------------------------------------------------------
+   6. BOTÃO HAMBURGUER (MOBILE)
+   ---------------------------------------------------------------- */
+.nav-hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  /* Aumenta a área de toque (touch target) para 48x48px (Padrão de Acessibilidade) */
+  width: 48px;
+  height: 48px;
+  padding: 15px 10px;
+  margin-right: -10px; /* Compensa o padding para manter alinhado à direita */
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  position: relative;
+  z-index: calc(var(--z-header) + 10);
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Visível apenas no mobile */
+@media (min-width: 1024px) {
+  .nav-hamburger {
+    display: none;
+  }
+}
+
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--color-gold-light);
+  border-radius: var(--radius-full);
+  transform-origin: center;
+  transition:
+    transform var(--transition-base),
+    opacity var(--transition-base),
+    width var(--transition-base),
+    background-color var(--transition-base);
+}
+
+/* Linha do meio menor (efeito assimétrico elegante) */
+.hamburger-line:nth-child(2) {
+  width: 70%;
+}
+
+/* Estado aberto — transforma em X */
+.nav-hamburger[aria-expanded="true"] .hamburger-line:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+.nav-hamburger[aria-expanded="true"] .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(8px);
+}
+
+.nav-hamburger[aria-expanded="true"] .hamburger-line:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+  width: 100%;
+}
+
+/* ----------------------------------------------------------------
+   7. MENU MOBILE — Drawer Lateral
+   ---------------------------------------------------------------- */
+@media (max-width: 1023px) {
+  .nav-menu {
+    display: flex; /* Garante flex para o drawer */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(320px, 85vw);
+    height: 100dvh;
+    padding: calc(80px + var(--space-8)) var(--space-8) var(--space-8);
+
+    background: var(--color-dark-deep);
+    border-left: 1px solid var(--color-dark-border);
+    box-shadow: -8px 0 48px rgba(0, 0, 0, 0.60);
+
+    /* Linha dourada lateral */
+    background-image: linear-gradient(
+      to bottom,
+      rgba(201, 168, 76, 0.08) 0%,
+      transparent 30%
+    );
+
+    /* Estado inicial: oculto à direita */
+    transform: translateX(100%);
+    z-index: 10; /* Garante que o menu fique ACIMA do backdrop */
+    visibility: hidden;
+    opacity: 0;
+    transition:
+      transform var(--transition-luxury),
+      opacity var(--transition-luxury),
+      visibility var(--transition-luxury);
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  /* Estado: menu aberto (classe adicionada via JS) */
+  .nav-menu.is-open {
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* Links no drawer mobile */
+  .nav-menu li {
+    width: 100%;
+    border-bottom: 1px solid var(--color-dark-border);
+  }
+
+  .nav-menu li:last-child {
+    border-bottom: none;
+    margin-top: var(--space-6);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-dark-border);
+  }
+
+  .nav-link {
+    display: block;
+    width: 100%;
+    font-size: var(--fs-sm);
+    letter-spacing: 0.20em;
+    padding: var(--space-5) 0;
+    color: var(--color-text-secondary);
+  }
+
+  .nav-link::after {
+    display: none; /* Sem underline no mobile */
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--color-gold-light);
+    padding-left: var(--space-3);
+  }
+
+  /* CTA "Contato" no mobile vira bloco completo */
+  .nav-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: var(--space-4) var(--space-6);
+  }
+
+  /* Backdrop semi-transparente ao abrir o menu */
+  .nav-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 1; /* Backdrop fica ABAIXO do nav-menu (10) e do hamburger */
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+  }
+
+  .nav-backdrop.is-visible {
+    display: block;
+    opacity: 1;
+  }
+}
+
+/* ----------------------------------------------------------------
+   8. DECORAÇÃO — Marca d'água no drawer mobile
+   ---------------------------------------------------------------- */
+@media (max-width: 1023px) {
+  .nav-menu::after {
+    content: 'MM';
+    position: absolute;
+    bottom: var(--space-8);
+    right: var(--space-8);
+    font-family: var(--font-script);
+    font-size: 6rem;
+    color: rgba(201, 168, 76, 0.04);
+    pointer-events: none;
+    line-height: 1;
+    user-select: none;
+  }
+}
+
+/* ================================================================
+   8. SELETOR DE IDIOMAS (PT / EN) — Design de Luxo
+   ================================================================ */
+.nav-item-lang {
+  display: flex;
+  align-items: center;
+}
+
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: var(--radius-full, 9999px);
+  padding: 0.35rem 0.75rem;
+  margin-left: 0.5rem;
+  font-family: var(--font-sans, "Montserrat", sans-serif);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.lang-switcher:hover {
+  border-color: rgba(201, 168, 76, 0.5);
+  box-shadow: 0 4px 16px rgba(201, 168, 76, 0.15);
+}
+
+.lang-btn {
+  color: #a8a59b;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
+  line-height: 1;
+}
+
+a.lang-btn:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(201, 168, 76, 0.6);
+}
+
+.lang-btn.active {
+  color: var(--color-gold, #c9a84c);
+  font-weight: 700;
+  cursor: default;
+}
+
+.lang-divider {
+  color: rgba(201, 168, 76, 0.35);
+  font-size: 0.68rem;
+  user-select: none;
+}
+
+/* Responsividade Mobile Drawer */
+@media (max-width: 1023px) {
+  .nav-item-lang {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-6, 1.5rem);
+    padding-top: var(--space-5, 1.25rem);
+    border-top: 1px solid var(--color-dark-border, rgba(201, 168, 76, 0.15));
+  }
+
+  .nav-item-lang .lang-switcher {
+    margin-left: 0;
+    padding: 0.45rem 1.1rem;
+    font-size: 0.8rem;
+  }
+}

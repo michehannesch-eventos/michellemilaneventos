@@ -1,0 +1,539 @@
+/* ================================================================
+   GLOBAL.CSS — Sistema de Design Michelle Milan Eventos
+   ----------------------------------------------------------------
+   Conteúdo:
+   1. Variáveis CSS (Design Tokens)
+   2. Reset & Box-Sizing
+   3. Tipografia Base
+   4. Utilitários: Container, Seções, Botões
+   5. Animações Globais
+   6. Acessibilidade
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   1. VARIÁVEIS CSS — Design Tokens de Luxo
+   ---------------------------------------------------------------- */
+:root {
+  /* ── Paleta Principal ─────────────────────────────────── */
+  --color-dark-deep:    #0d0c0a;   /* Fundo escuro profundo */
+  --color-dark:         #16140f;   /* Fundo escuro principal */
+  --color-dark-mid:     #1f1c14;   /* Seções alternadas */
+  --color-dark-soft:    #2a2519;   /* Cards / superfícies */
+  --color-dark-border:  #38321f;   /* Bordas sutis */
+
+  /* ── Dourado (Acento Principal) ───────────────────────── */
+  --color-gold:         #c9a84c;   /* Dourado principal */
+  --color-gold-light:   #e2c06d;   /* Dourado claro / hover */
+  --color-gold-dark:    #9b7d32;   /* Dourado escuro */
+  --color-gold-pale:    #f0dfa0;   /* Dourado palha suave */
+
+  /* ── Nude / Tom Quente ────────────────────────────────── */
+  --color-nude:         #d4b896;   /* Nude principal */
+  --color-nude-light:   #e8d5bf;   /* Nude claro */
+  --color-nude-dark:    #a8886a;   /* Nude escuro */
+
+  /* ── Texto ────────────────────────────────────────────── */
+  --color-text-primary:   #f5f0e8; /* Texto principal (off-white quente) */
+  --color-text-secondary: #c4b89a; /* Texto secundário (nude claro) */
+  --color-text-muted:     #7a6e5a; /* Texto desbotado */
+  --color-text-inverse:   #0d0c0a; /* Texto sobre fundos claros */
+
+  /* ── Superfícies ──────────────────────────────────────── */
+  --color-surface-1:    #1a1710;   /* Superfície cards */
+  --color-surface-2:    #222018;   /* Superfície elevada */
+  --color-overlay:      rgba(13, 12, 10, 0.72); /* Overlay escuro */
+
+  /* ── Gradientes ───────────────────────────────────────── */
+  --gradient-gold:       linear-gradient(135deg, #c9a84c 0%, #e2c06d 50%, #9b7d32 100%);
+  --gradient-dark:       linear-gradient(180deg, #0d0c0a 0%, #16140f 100%);
+  --gradient-hero:       linear-gradient(135deg, #0d0c0a 0%, #1f1c14 60%, #0d0c0a 100%);
+  --gradient-overlay:    linear-gradient(to right, rgba(13,12,10,0.96) 40%, rgba(13,12,10,0.4) 100%);
+
+  /* ── Tipografia ───────────────────────────────────────── */
+  --font-serif:    'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans:     'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --font-script:   'Great Vibes', cursive;
+
+  /* ── Escala Tipográfica (Mobile-First) ────────────────── */
+  --fs-xs:    0.75rem;   /* 12px */
+  --fs-sm:    0.875rem;  /* 14px */
+  --fs-base:  1rem;      /* 16px */
+  --fs-md:    1.125rem;  /* 18px */
+  --fs-lg:    1.25rem;   /* 20px */
+  --fs-xl:    1.5rem;    /* 24px */
+  --fs-2xl:   2rem;      /* 32px */
+  --fs-3xl:   2.5rem;    /* 40px */
+  --fs-4xl:   3rem;      /* 48px */
+  --fs-5xl:   3.75rem;   /* 60px */
+  --fs-6xl:   4.5rem;    /* 72px */
+
+  /* ── Font Weights ─────────────────────────────────────── */
+  --fw-light:   300;
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold:600;
+
+  /* ── Espaçamentos ─────────────────────────────────────── */
+  --space-1:   0.25rem;   /* 4px */
+  --space-2:   0.5rem;    /* 8px */
+  --space-3:   0.75rem;   /* 12px */
+  --space-4:   1rem;      /* 16px */
+  --space-5:   1.25rem;   /* 20px */
+  --space-6:   1.5rem;    /* 24px */
+  --space-8:   2rem;      /* 32px */
+  --space-10:  2.5rem;    /* 40px */
+  --space-12:  3rem;      /* 48px */
+  --space-16:  4rem;      /* 64px */
+  --space-20:  5rem;      /* 80px */
+  --space-24:  6rem;      /* 96px */
+  --space-32:  8rem;      /* 128px */
+
+  /* ── Bordas & Sombras ─────────────────────────────────── */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;
+
+  --shadow-gold-sm:  0 2px 12px rgba(201, 168, 76, 0.20);
+  --shadow-gold-md:  0 4px 24px rgba(201, 168, 76, 0.30);
+  --shadow-gold-lg:  0 8px 48px rgba(201, 168, 76, 0.25);
+  --shadow-dark-sm:  0 4px 16px rgba(0, 0, 0, 0.40);
+  --shadow-dark-lg:  0 16px 64px rgba(0, 0, 0, 0.60);
+
+  /* ── Transições ───────────────────────────────────────── */
+  --transition-fast:   150ms ease;
+  --transition-base:   300ms ease;
+  --transition-slow:   500ms ease;
+  --transition-luxury: 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* ── Larguras ─────────────────────────────────────────── */
+  --container-max: 1200px;
+  --container-pad: var(--space-6);
+
+  /* ── Z-Index ──────────────────────────────────────────── */
+  --z-base:    0;
+  --z-card:    10;
+  --z-header:  100;
+  --z-modal:   200;
+  --z-float:   300;
+  --z-overlay: 400;
+}
+
+/* ── Breakpoints (Referência, usados via @media) ──────────────── */
+/* mobile:  até 767px (base)         */
+/* tablet:  768px – 1023px           */
+/* desktop: 1024px+                  */
+/* wide:    1200px+                  */
+
+
+/* ----------------------------------------------------------------
+   2. RESET & BOX-SIZING
+   ---------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-dark);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-base);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+p {
+  line-height: 1.8;
+}
+
+strong {
+  font-weight: var(--fw-semibold);
+  color: var(--color-gold-light);
+}
+
+em {
+  font-style: italic;
+  color: var(--color-gold);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--color-dark-border);
+  margin: var(--space-8) 0;
+}
+
+/* ----------------------------------------------------------------
+   3. TIPOGRAFIA BASE
+   ---------------------------------------------------------------- */
+
+/* Títulos — Cormorant Garamond */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: var(--fw-light);
+  line-height: 1.2;
+  color: var(--color-text-primary);
+  letter-spacing: 0.02em;
+}
+
+h1 { font-size: var(--fs-3xl); }
+h2 { font-size: var(--fs-2xl); }
+h3 { font-size: var(--fs-xl);  }
+h4 { font-size: var(--fs-lg);  }
+h5 { font-size: var(--fs-md);  }
+h6 { font-size: var(--fs-base);}
+
+@media (min-width: 768px) {
+  h1 { font-size: var(--fs-4xl); }
+  h2 { font-size: var(--fs-3xl); }
+  h3 { font-size: var(--fs-2xl); }
+}
+
+@media (min-width: 1024px) {
+  h1 { font-size: var(--fs-5xl); }
+  h2 { font-size: var(--fs-4xl); }
+  h3 { font-size: var(--fs-2xl); }
+}
+
+/* Eyebrow (rótulo acima do título) */
+.section-eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  display: block;
+  margin-bottom: var(--space-3);
+}
+
+/* Títulos de Seção */
+.section-title {
+  font-family: var(--font-serif);
+  font-weight: var(--fw-light);
+  color: var(--color-text-primary);
+  line-height: 1.1;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--color-gold);
+}
+
+/* Subtítulo de Seção */
+.section-subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-light);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* Cabeçalho centralizado de seções */
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-16);
+}
+
+.section-header .section-title {
+  margin-bottom: var(--space-4);
+}
+
+.section-header .section-subtitle {
+  margin-top: var(--space-5);
+}
+
+/* ----------------------------------------------------------------
+   4. UTILITÁRIOS — Container, Seções, Botões
+   ---------------------------------------------------------------- */
+
+/* Container principal */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-inline: var(--space-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: var(--space-12);
+  }
+}
+
+/* Padding vertical padrão de seções */
+.section-padding {
+  padding-block: var(--space-20);
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-block: var(--space-32);
+  }
+}
+
+/* Helper: apenas desktop */
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktop-only {
+    display: inline;
+  }
+}
+
+/* ── Botões ───────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-luxury),
+    color var(--transition-luxury),
+    border-color var(--transition-luxury),
+    box-shadow var(--transition-luxury),
+    transform var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Botão Primário — Dourado preenchido */
+.btn-primary {
+  background: var(--gradient-gold);
+  color: var(--color-text-inverse);
+  border: 1px solid transparent;
+  box-shadow: var(--shadow-gold-sm);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: linear-gradient(135deg, #e2c06d 0%, #c9a84c 50%, #b8922e 100%);
+  box-shadow: var(--shadow-gold-md);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-gold-sm);
+}
+
+/* Botão Secundário — Contorno dourado */
+.btn-secondary {
+  background: transparent;
+  color: var(--color-gold-light);
+  border: 1px solid var(--color-gold);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background: rgba(201, 168, 76, 0.10);
+  color: var(--color-gold-pale);
+  border-color: var(--color-gold-light);
+  transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* ── Divisor dourado decorativo ───────────────────────────────── */
+.gold-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--gradient-gold);
+  margin: var(--space-5) auto;
+}
+
+.gold-divider--left {
+  margin-left: 0;
+}
+
+/* ----------------------------------------------------------------
+   5. ANIMAÇÕES GLOBAIS
+   ---------------------------------------------------------------- */
+
+/* Fade in desde abaixo (usado com Intersection Observer) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in simples */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Linha animada */
+@keyframes lineGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Pulse — botão WhatsApp flutuante */
+@keyframes pulse-ring {
+  0%   { transform: scale(1);    box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.50); }
+  70%  { transform: scale(1.03); box-shadow: 0 0 0 14px rgba(201, 168, 76, 0); }
+  100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(201, 168, 76, 0); }
+}
+
+/* Shimmer nos botões */
+@keyframes shimmer {
+  0%   { left: -100%; }
+  100% { left:  200%; }
+}
+
+/* Reveal de scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ----------------------------------------------------------------
+   6. ACESSIBILIDADE
+   ---------------------------------------------------------------- */
+
+/* Focus visível aprimorado */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+/* Reduz animações para usuários que preferem */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Skip to content */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  z-index: var(--z-overlay);
+  background: var(--color-gold);
+  color: var(--color-text-inverse);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  border-radius: var(--radius-sm);
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold-dark);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* Seleção de texto */
+::selection {
+  background: rgba(201, 168, 76, 0.25);
+  color: var(--color-gold-pale);
+}

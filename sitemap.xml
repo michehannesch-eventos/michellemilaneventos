@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Versão Principal em Português -->
+  <url>
+    <loc>https://michellemilaneventos.com.br/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://michellemilaneventos.com.br/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://michellemilaneventos.com.br/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://michellemilaneventos.com.br/"/>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://michellemilaneventos.com.br/assets/michele.webp</image:loc>
+      <image:title>Michelle Milan - Cerimonial de Luxo em Brasília</image:title>
+    </image:image>
+  </url>
+  <!-- Versão em Inglês -->
+  <url>
+    <loc>https://michellemilaneventos.com.br/en/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://michellemilaneventos.com.br/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://michellemilaneventos.com.br/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://michellemilaneventos.com.br/"/>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://michellemilaneventos.com.br/assets/michele.webp</image:loc>
+      <image:title>Michelle Milan - Luxury Wedding Planner Brasília</image:title>
+    </image:image>
+  </url>
+</urlset>
