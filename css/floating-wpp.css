@@ -44,12 +44,22 @@
     box-shadow var(--transition-base),
     filter var(--transition-base);
 
-  /* Pulse contínuo */
-  animation: wppPulse 2.8s ease-in-out infinite;
-
   /* Acessibilidade */
   text-decoration: none;
   cursor: pointer;
+}
+
+/* Pseudo-elemento para pulse de onda composto por GPU (zero repaints) */
+.floating-wpp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: rgba(37, 211, 102, 0.45);
+  z-index: 0;
+  pointer-events: none;
+  animation: wppPulse 2.8s ease-out 2.5s infinite;
+  will-change: transform, opacity;
 }
 
 /* ----------------------------------------------------------------
@@ -144,26 +154,20 @@
 }
 
 /* ----------------------------------------------------------------
-   5. ANIMAÇÃO PULSE
+   5. ANIMAÇÃO PULSE (Composta por GPU — transform e opacity)
    ---------------------------------------------------------------- */
 @keyframes wppPulse {
   0% {
-    box-shadow:
-      0 4px 20px rgba(37, 211, 102, 0.40),
-      0 2px 8px rgba(0, 0, 0, 0.30),
-      0 0 0 0 rgba(37, 211, 102, 0.50);
+    transform: scale(1);
+    opacity: 0.8;
   }
   50% {
-    box-shadow:
-      0 4px 20px rgba(37, 211, 102, 0.40),
-      0 2px 8px rgba(0, 0, 0, 0.30),
-      0 0 0 14px rgba(37, 211, 102, 0);
+    transform: scale(1.4);
+    opacity: 0;
   }
   100% {
-    box-shadow:
-      0 4px 20px rgba(37, 211, 102, 0.40),
-      0 2px 8px rgba(0, 0, 0, 0.30),
-      0 0 0 0 rgba(37, 211, 102, 0);
+    transform: scale(1.4);
+    opacity: 0;
   }
 }
 
@@ -180,9 +184,7 @@
 }
 
 .floating-wpp {
-  animation:
-    wppSlideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 1.5s both,
-    wppPulse 2.8s ease-in-out 2.5s infinite;
+  animation: wppSlideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 1.5s both;
 }
 
 /* ----------------------------------------------------------------
