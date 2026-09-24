@@ -367,9 +367,17 @@
 @media (max-width: 1023px) {
   .section-hero,
   .hero {
-    flex-direction: column;
-    min-height: auto !important;
-    padding: 0;
+    min-height: 100vh !important;
+    min-height: 100svh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding-top: calc(var(--header-height, 80px) + 0.75rem) !important;
+    padding-bottom: 2rem !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    box-sizing: border-box !important;
   }
 
   .hero-container,
@@ -380,10 +388,11 @@
     align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
-    gap: 1rem !important;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: calc(var(--header-height, 80px) + 0.75rem) 1.25rem 1.5rem 1.25rem !important;
+    gap: 0.85rem !important;
+    width: 100% !important;
+    max-width: 480px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
     min-height: auto !important;
   }
 
@@ -397,8 +406,8 @@
   }
 
   .hero-image-frame {
-    width: min(190px, 48vw) !important;
-    max-width: 210px !important;
+    width: min(180px, 44vw) !important;
+    max-width: 195px !important;
     aspect-ratio: 3 / 4 !important;
     margin: 0 auto !important;
   }
@@ -415,26 +424,36 @@
 
   .hero-eyebrow,
   .hero-subtitle {
+    display: block !important;
     justify-content: center;
     text-align: center;
     font-size: 0.75rem !important;
-    letter-spacing: 0.18em !important;
-    margin-bottom: 0.35rem;
+    letter-spacing: 0.2em !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .hero-eyebrow::before,
+  .hero-eyebrow::after,
+  .hero-subtitle::before,
+  .hero-subtitle::after {
+    display: none !important;
   }
 
   .hero-title {
-    font-size: clamp(1.65rem, 5.5vw, 2.1rem) !important;
-    line-height: 1.2 !important;
-    margin: 0.15rem 0 0.4rem 0 !important;
+    font-size: clamp(1.45rem, 5vw, 1.85rem) !important;
+    line-height: 1.25 !important;
+    margin: 0 0 0.75rem 0 !important;
+    padding: 0 0.5rem !important;
     text-align: center !important;
   }
 
   .hero-description {
-    font-size: 0.92rem;
-    line-height: 1.55;
-    max-width: 340px !important;
-    margin: 0 auto 0.85rem auto !important;
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+    max-width: 360px !important;
+    margin: 0 auto 1.25rem auto !important;
     text-align: center !important;
+    color: rgba(255, 255, 255, 0.8) !important;
   }
 
   .hero-actions {
@@ -443,7 +462,7 @@
     align-items: center !important;
     justify-content: center !important;
     width: 100% !important;
-    max-width: 320px !important;
+    max-width: 300px !important;
     margin: 0 auto !important;
     gap: 0.65rem !important;
   }
@@ -453,6 +472,8 @@
     text-align: center;
     justify-content: center;
     padding: 0.75rem 1.25rem !important;
+    font-size: 0.82rem !important;
+    letter-spacing: 0.08em !important;
   }
 
   .hero-scroll-indicator {
