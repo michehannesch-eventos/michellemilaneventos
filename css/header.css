@@ -336,20 +336,25 @@
   width: 70%;
 }
 
-/* Estado aberto — transforma em X */
-.nav-hamburger[aria-expanded="true"] .hamburger-line:nth-child(1) {
-  transform: translateY(8.5px) rotate(45deg);
-}
+  /* Estado aberto — transforma em X com alinhamento e respiro adequados */
+  .nav-hamburger[aria-expanded="true"] {
+    position: relative;
+    z-index: 1060;
+  }
 
-.nav-hamburger[aria-expanded="true"] .hamburger-line:nth-child(2) {
-  opacity: 0;
-  transform: translateX(8px);
-}
+  .nav-hamburger[aria-expanded="true"] .hamburger-line:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+  }
 
-.nav-hamburger[aria-expanded="true"] .hamburger-line:nth-child(3) {
-  transform: translateY(-8.5px) rotate(-45deg);
-  width: 100%;
-}
+  .nav-hamburger[aria-expanded="true"] .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: translateX(8px);
+  }
+
+  .nav-hamburger[aria-expanded="true"] .hamburger-line:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+    width: 100%;
+  }
 
 /* ----------------------------------------------------------------
    7. MENU MOBILE — Drawer Lateral
@@ -364,15 +369,17 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: min(320px, 85vw);
+    left: 0;
+    width: 100% !important;
+    max-width: 100% !important;
     height: 100dvh;
-    padding: calc(var(--header-height, 80px) + 1.25rem) var(--space-6) var(--space-8);
+    padding: calc(var(--header-height, 80px) + 0.75rem) var(--space-6) var(--space-8);
 
-    background: var(--color-dark-deep);
-    border-left: 1px solid var(--color-dark-border);
-    box-shadow: -8px 0 48px rgba(0, 0, 0, 0.60);
+    background: #0d0b09 !important;
+    border-left: none;
+    box-shadow: none;
 
-    /* Linha dourada lateral */
+    /* Linha dourada sutil decorativa */
     background-image: linear-gradient(
       to bottom,
       rgba(201, 168, 76, 0.08) 0%,
@@ -555,8 +562,9 @@ a.lang-btn:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
-    padding-top: 1rem;
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    margin-bottom: 2rem;
     border-top: 1px solid var(--color-dark-border, rgba(201, 168, 76, 0.15));
     border-bottom: none;
   }
