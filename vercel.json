@@ -10,65 +10,6 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
-    },
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        }
-      ]
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/portfolio",
-      "destination": "/#portfolio",
-      "permanent": true
-    },
-    {
-      "source": "/sobre",
-      "destination": "/#sobre",
-      "permanent": true
-    },
-    {
-      "source": "/servicos",
-      "destination": "/#servicos",
-      "permanent": true
-    },
-    {
-      "source": "/faq",
-      "destination": "/#faq",
-      "permanent": true
-    },
-    {
-      "source": "/en/portfolio",
-      "destination": "/en/#portfolio",
-      "permanent": true
-    },
-    {
-      "source": "/en/about",
-      "destination": "/en/#sobre",
-      "permanent": true
-    },
-    {
-      "source": "/en/services",
-      "destination": "/en/#servicos",
-      "permanent": true
-    },
-    {
-      "source": "/en/faq",
-      "destination": "/en/#faq",
-      "permanent": true
     }
   ]
 }
