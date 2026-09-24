@@ -368,91 +368,129 @@
   .section-hero,
   .hero {
     flex-direction: column;
-    padding: calc(var(--header-height, 80px) + 1.5rem) var(--space-5, 1.25rem) var(--space-10, 2.5rem);
-    padding-top: calc(var(--header-height, 80px) + 1.5rem);
+    min-height: auto !important;
+    padding: 0;
   }
 
   .hero-container,
   .hero-grid,
   .hero .container {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: var(--space-5, 1.25rem);
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 1.25rem !important;
     max-width: 600px;
     margin: 0 auto;
-    padding: 0;
+    padding: calc(var(--header-height, 80px) + 1rem) 1.25rem 2rem 1.25rem !important;
+    min-height: auto !important;
+  }
+
+  .hero-image-wrapper {
+    order: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+
+  .hero-image-frame {
+    width: min(220px, 52vw) !important;
+    max-width: 240px !important;
+    aspect-ratio: 3 / 4 !important;
+    margin: 0 auto !important;
   }
 
   .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
-    order: 2;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    order: 2 !important;
+    width: 100% !important;
   }
 
   .hero-eyebrow,
   .hero-subtitle {
     justify-content: center;
     text-align: center;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.18em !important;
+    margin-bottom: 0.4rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.65rem, 5.5vw, 2.1rem) !important;
+    line-height: 1.2 !important;
+    margin: 0.2rem 0 0.6rem 0 !important;
+    text-align: center !important;
   }
 
   .hero-description {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    max-width: 340px !important;
+    margin: 0 auto 1.25rem auto !important;
+    text-align: center !important;
   }
 
   .hero-actions {
-    justify-content: center;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    gap: 0.65rem !important;
   }
 
-  .hero-image-wrapper {
-    order: 1;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
+  .hero-actions .btn {
     width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 0.85rem 1.25rem;
   }
 
-  .hero-image-frame {
-    width: min(240px, 58vw);
-    max-width: 280px;
-    aspect-ratio: 3 / 4;
-    margin: 0 auto;
+  .hero-scroll-indicator {
+    display: none;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .section-hero,
-  .hero {
-    padding: calc(var(--header-height, 80px) + var(--space-10)) var(--space-8) var(--space-16);
-  }
-
   .hero-container,
   .hero-grid,
   .hero .container {
-    gap: var(--space-8);
+    gap: 1.5rem !important;
     max-width: 680px;
+    padding: calc(var(--header-height, 80px) + 1.5rem) 2rem 3rem 2rem !important;
   }
 
   .hero-image-frame {
-    width: 300px;
-    max-width: 300px;
+    width: 260px !important;
+    max-width: 280px !important;
   }
 
   .hero-title {
-    font-size: clamp(2.6rem, 5.5vw, 3.4rem);
+    font-size: clamp(2.2rem, 5vw, 2.8rem) !important;
   }
 
   .hero-description {
-    font-size: var(--fs-sm);
-    line-height: 1.8;
-    max-width: 480px;
+    font-size: 1rem;
+    max-width: 440px !important;
+  }
+
+  .hero-actions {
+    flex-direction: row !important;
+    max-width: 440px !important;
+  }
+
+  .hero-actions .btn {
+    width: auto;
+    flex: 1;
   }
 }
 
