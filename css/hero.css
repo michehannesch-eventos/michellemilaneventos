@@ -71,6 +71,7 @@
    3. CONTÊINER INTERNO
    ---------------------------------------------------------------- */
 .hero-container,
+.hero-grid,
 .hero .container {
   width: 100%;
   position: relative;
@@ -372,6 +373,7 @@
   }
 
   .hero-container,
+  .hero-grid,
   .hero .container {
     display: flex;
     flex-direction: column-reverse;
@@ -432,6 +434,7 @@
   }
 
   .hero-container,
+  .hero-grid,
   .hero .container {
     gap: var(--space-8);
     max-width: 680px;
@@ -459,11 +462,12 @@
 @media (min-width: 1024px) {
   .section-hero,
   .hero {
-    flex-direction: row;
+    display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
     min-height: 100dvh;
+    width: 100%;
   }
 
   .hero-overlay {
@@ -471,11 +475,11 @@
   }
 
   .hero-container,
-  .hero .container,
-  .hero:not(:has(.hero-container)) {
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-    align-items: center;
+  .hero-grid,
+  .hero .container {
+    display: grid !important;
+    grid-template-columns: 1.15fr 0.85fr !important;
+    align-items: center !important;
     gap: 3rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -485,6 +489,7 @@
     z-index: 3;
   }
 
+  /* Coluna esquerda (texto): alinhamento do texto à esquerda, com botões CTA alinhados à esquerda */
   .hero-content {
     display: flex;
     flex-direction: column;
@@ -513,7 +518,7 @@
   }
 
   .hero-title {
-    font-size: clamp(2.6rem, 3.8vw, 3.8rem);
+    font-size: clamp(2.4rem, 3.6vw, 3.8rem);
     line-height: 1.15;
     margin: 0.35rem 0 1rem 0;
     text-align: left;
@@ -532,6 +537,7 @@
   .hero-actions {
     justify-content: flex-start;
     gap: 1rem;
+    margin: 0;
   }
 
   .hero-actions .btn {
@@ -539,6 +545,7 @@
     font-size: var(--fs-sm);
   }
 
+  /* Coluna direita (imagem): moldura da Michelle alinhada à direita dentro da sua coluna */
   .hero-image-wrapper {
     order: 2;
     display: flex;
@@ -573,8 +580,8 @@
    ---------------------------------------------------------------- */
 @media (min-width: 1200px) {
   .hero-container,
-  .hero .container,
-  .hero:not(:has(.hero-container)) {
+  .hero-grid,
+  .hero .container {
     gap: 4rem;
   }
 
@@ -588,7 +595,7 @@
    ---------------------------------------------------------------- */
 @media (min-width: 1400px) {
   .hero-image-frame {
-    width: 460px;
+    width: 450px;
   }
 }
 
@@ -597,8 +604,8 @@
    ---------------------------------------------------------------- */
 @media (min-width: 1024px) and (max-height: 780px) {
   .hero-container,
-  .hero .container,
-  .hero:not(:has(.hero-container)) {
+  .hero-grid,
+  .hero .container {
     padding-top: calc(var(--header-height, 80px) + 1rem);
     padding-bottom: 2rem;
   }
