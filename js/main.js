@@ -73,6 +73,10 @@
     menuIsOpen = true;
     navMenu.classList.add('is-open');
     navBackdrop.classList.add('is-visible');
+    if (header) {
+      header.classList.add('menu-open');
+    }
+    document.body.classList.add('menu-open');
     hamburger.setAttribute('aria-expanded', 'true');
     hamburger.setAttribute('aria-label', 'Fechar menu de navegação');
     document.body.style.overflow = 'hidden';
@@ -82,6 +86,10 @@
     menuIsOpen = false;
     navMenu.classList.remove('is-open');
     navBackdrop.classList.remove('is-visible');
+    if (header) {
+      header.classList.remove('menu-open');
+    }
+    document.body.classList.remove('menu-open');
     hamburger.setAttribute('aria-expanded', 'false');
     hamburger.setAttribute('aria-label', 'Abrir menu de navegação');
     document.body.style.overflow = '';

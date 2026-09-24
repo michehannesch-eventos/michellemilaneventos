@@ -111,13 +111,18 @@
   --container-max: 1200px;
   --container-pad: var(--space-6);
 
+  /* ── Dimensões Estruturais ────────────────────────────── */
+  --header-height: 80px;
+
   /* ── Z-Index ──────────────────────────────────────────── */
-  --z-base:    0;
-  --z-card:    10;
-  --z-header:  100;
-  --z-modal:   200;
-  --z-float:   300;
-  --z-overlay: 400;
+  --z-base:     0;
+  --z-card:     10;
+  --z-header:   100;
+  --z-modal:    200;
+  --z-float:    300;
+  --z-overlay:  400;
+  --z-backdrop: 1040;
+  --z-drawer:   1050;
 }
 
 /* ── Breakpoints (Referência, usados via @media) ──────────────── */

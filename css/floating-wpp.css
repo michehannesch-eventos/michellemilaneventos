@@ -49,6 +49,17 @@
   cursor: pointer;
 }
 
+/* Quando o menu mobile estiver ativo, o botão do WhatsApp fica sob a gaveta (1050) e backdrop (1040) */
+body.menu-open .floating-wpp,
+body:has(.nav-menu.is-open) .floating-wpp,
+.site-header.menu-open ~ .floating-wpp {
+  z-index: 900;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-base), visibility var(--transition-base);
+}
+
 /* Pseudo-elemento para pulse de onda composto por GPU (zero repaints) */
 .floating-wpp::before {
   content: '';
