@@ -1,13 +1,19 @@
 {
-  "name": "Michelle Milan Eventos & Cerimonial",
-  "short_name": "Michelle Milan",
-  "description": "Cerimonial de luxo e assessoria de eventos em Brasília e todo o Distrito Federal.",
+  "name": "Michelle Milan Eventos",
+  "short_name": "Michelle Milan Eventos",
+  "description": "Assessoria e cerimonial para eventos sociais e corporativos em Brasília e todo o Distrito Federal.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0d0c0a",
   "theme_color": "#c9a84c",
   "orientation": "portrait",
   "icons": [
+    {
+      "src": "/assets/michele.jpeg",
+      "sizes": "192x192 512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
     {
       "src": "/assets/michele.webp",
       "sizes": "192x192 512x512",
