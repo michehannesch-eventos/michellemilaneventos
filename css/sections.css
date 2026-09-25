@@ -204,6 +204,12 @@
   letter-spacing: 0.01em;
 }
 
+.section-title .highlight {
+  color: var(--color-gold);
+  font-style: italic;
+  font-family: inherit;
+}
+
 /* Divisor dourado */
 .about-divider {
   width: 56px;
@@ -787,23 +793,13 @@
 }
 
 .coverage-card-header {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
   margin-bottom: 0.85rem;
-}
-
-.coverage-card-icon {
-  font-size: 0.65rem;
-  color: var(--color-gold, #c9a84c);
-  opacity: 0.85;
-  flex-shrink: 0;
 }
 
 .coverage-card-title {
   color: var(--color-gold, #c9a84c);
   font-family: var(--font-serif);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: 0.02em;
   line-height: 1.25;
