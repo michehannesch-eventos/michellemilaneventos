@@ -42,55 +42,37 @@
 }
 
 /* ----------------------------------------------------------------
-   2. GRID DA GALERIA — Mobile First (1 coluna)
+   2. GRID DA GALERIA — Mobile First (1 ou 2 colunas)
    ---------------------------------------------------------------- */
 .gallery-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-3);
+  gap: 1rem;
   padding-inline: var(--space-4);
-  max-width: 1400px;
+  max-width: 1200px;
   margin-inline: auto;
 }
 
-/* ── Tablet: 2 colunas ────────────────────────────────────────── */
-@media (min-width: 640px) {
+/* ── Tablet / Mobile Médio: 2 colunas proporcionais ──────────── */
+@media (min-width: 580px) {
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-3);
+    gap: 1rem;
     padding-inline: var(--space-6);
   }
 }
 
-/* ── Desktop: Grid Masonry com 4 colunas e areas definidas ─────── */
+/* ── Desktop: Grade uniforme de 3 colunas perfeitamente simétricas ── */
 @media (min-width: 1024px) {
   .gallery-grid {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-    gap: var(--space-3);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
     padding-inline: var(--space-8);
-
-    /*
-      Layout visual:
-      [ 1 ][ 2 ][ 3 ][ 5 ]
-      [ 4 ─── wide ─── ][ 6 ][ 7 ]
-    */
-    grid-template-areas:
-      "item1 item2 item3 item5"
-      "item4 item4 item6 item7";
   }
-
-  #gallery-item-1 { grid-area: item1; }
-  #gallery-item-2 { grid-area: item2; }
-  #gallery-item-3 { grid-area: item3; }
-  #gallery-item-4 { grid-area: item4; }
-  #gallery-item-5 { grid-area: item5; }
-  #gallery-item-6 { grid-area: item6; }
-  #gallery-item-7 { grid-area: item7; }
 }
 
 /* ----------------------------------------------------------------
-   3. ITEM DA GALERIA — BASE
+   3. ITEM DA GALERIA — BASE (Aspect-Ratio Consistente)
    ---------------------------------------------------------------- */
 .gallery-item {
   position: relative;
@@ -98,10 +80,11 @@
   overflow: hidden;
   background: var(--color-dark-soft);
   aspect-ratio: 4 / 3;
+  width: 100%;
 
   /* Borda dourada sutil */
   box-shadow:
-    0 0 0 1px rgba(201, 168, 76, 0.08),
+    0 0 0 1px rgba(201, 168, 76, 0.12),
     var(--shadow-dark-sm);
 
   transition:
@@ -111,10 +94,10 @@
 
 .gallery-item:hover {
   box-shadow:
-    0 0 0 1px rgba(201, 168, 76, 0.25),
+    0 0 0 1px rgba(201, 168, 76, 0.35),
     var(--shadow-gold-sm),
-    var(--shadow-dark-sm);
-  transform: translateY(-3px);
+    var(--shadow-dark-md);
+  transform: translateY(-4px);
   z-index: 2;
 }
 
@@ -146,39 +129,8 @@
 
 .gallery-item-btn:hover .gallery-img,
 .gallery-item-btn:focus-visible .gallery-img {
-  transform: scale(1.06);
-  filter: brightness(0.78) contrast(1.08);
-}
-
-/* ----------------------------------------------------------------
-   4. VARIANTES DE TAMANHO
-   ---------------------------------------------------------------- */
-
-/* Item alto (portrait 3:4) — mobile */
-.gallery-item--tall {
-  aspect-ratio: 3 / 4;
-}
-
-/* Item largo (landscape 2:1) */
-.gallery-item--wide {
-  aspect-ratio: 2 / 1;
-}
-
-/* No desktop, o item wide já é tratado via grid-area */
-@media (min-width: 1024px) {
-  .gallery-item {
-    aspect-ratio: unset;
-    min-height: 260px;
-  }
-
-  .gallery-item--tall {
-    min-height: 400px;
-  }
-
-  /* Item 4 (wide) tem altura menor pois é 2 colunas */
-  #gallery-item-4 {
-    min-height: 240px;
-  }
+  transform: scale(1.05);
+  filter: brightness(0.82) contrast(1.08);
 }
 
 /* ----------------------------------------------------------------

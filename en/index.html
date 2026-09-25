@@ -256,7 +256,7 @@
   <!-- ============================================================
        UNIFIED CSS — Optimized Bundle (Zero Cascading Render Blocking)
   ============================================================ -->
-  <link rel="stylesheet" href="../css/bundle.min.css?v=20260925" />
+  <link rel="stylesheet" href="../css/bundle.min.css?v=20260925b" />
 </head>
 
 <body>
@@ -321,9 +321,10 @@
 
       <div class="hero-container container hero-grid">
         <div class="hero-content">
-          <span class="hero-subtitle">Ceremonial | Coordination | Management | Consulting | Event Planning</span>
-          <h1 class="hero-title">
-            Michelle Milan — <em>Event Planning &amp; Coordination in DF</em>
+          <span class="hero-subtitle">Ceremonial · Coordination · Management · Consulting · Event Planning</span>
+          <h1 class="hero-title" id="hero-title">
+            Michelle Milan
+            <span class="hero-title-sub">Event Planning &amp; Coordination in DF</span>
           </h1>
           <p class="hero-description">
             For over a decade, turning ideas into unforgettable moments across Brasília and the Federal District Region. Your event, your way. Our experience to make it happen.
@@ -374,7 +375,8 @@
           <div class="about-content">
             <p class="section-eyebrow">Meet Michelle</p>
             <h2 id="sobre-titulo" class="section-title">
-              Michelle Milan<br /><em>Event Planning &amp; Coordination in DF</em>
+              Heritage &amp; Dedication<br />
+              <span class="section-title-sub">Over a decade creating unforgettable celebrations</span>
             </h2>
             <div class="about-divider" aria-hidden="true"></div>
             <p class="about-text">
@@ -440,9 +442,18 @@
                 For clients who have already planned their celebration, but desire the peace of mind knowing everything will be executed with absolute excellence.
               </p>
               <ul class="service-features" aria-label="Features included in Firenze package">
-                <li><strong>Peace of Mind</strong>: Enjoy your celebration without having to manage vendors.</li>
-                <li><strong>Organization</strong>: Professional timeline, technical alignment, and setup supervision.</li>
-                <li><strong>Excellence</strong>: Flawless precision in executing every detail, protocol, and special moment.</li>
+                <li>
+                  <strong class="feature-label">Peace of Mind:</strong>
+                  <span class="feature-text">Enjoy your celebration without having to manage vendors and staff.</span>
+                </li>
+                <li>
+                  <strong class="feature-label">Organization:</strong>
+                  <span class="feature-text">Professional timeline, technical alignment, and setup supervision.</span>
+                </li>
+                <li>
+                  <strong class="feature-label">Excellence:</strong>
+                  <span class="feature-text">Flawless precision in executing every detail, protocol, and special moment.</span>
+                </li>
               </ul>
             </div>
           </article>
@@ -465,9 +476,18 @@
                 Professional guidance from initial planning to celebration day. We structure deadlines, tastings, vendor selections, and detailed timelines.
               </p>
               <ul class="service-features" aria-label="Features included in Venezia package">
-                <li><strong>Strategic Curation</strong>: The right vendor choices and trusted partners for your vision.</li>
-                <li><strong>360° Event Vision</strong>: A coherent, harmonious, and seamless celebration experience.</li>
-                <li><strong>Project Leadership</strong>: Absolute clarity, proactive follow-up, and flawless execution.</li>
+                <li>
+                  <strong class="feature-label">Strategic Curation:</strong>
+                  <span class="feature-text">Assertive vendor choices and hiring trusted partners.</span>
+                </li>
+                <li>
+                  <strong class="feature-label">360° Event Vision:</strong>
+                  <span class="feature-text">Harmonious, integrated celebration without unexpected issues.</span>
+                </li>
+                <li>
+                  <strong class="feature-label">Project Leadership:</strong>
+                  <span class="feature-text">Decision clarity, continuous follow-up, and flawless execution.</span>
+                </li>
               </ul>
             </div>
           </article>
@@ -488,9 +508,18 @@
                 For bespoke celebrations and tailor-made experiences created without preset formulas, custom designed around your personality and style.
               </p>
               <ul class="service-features" aria-label="Features included in Capri package">
-                <li><strong>Surprising Details</strong>: Atmospheric narrative and refined touches to enchant guests.</li>
-                <li><strong>Exclusive Attention</strong>: Full dedication to every subtle nuance of your celebration.</li>
-                <li><strong>Signature Experiences</strong>: A one-of-a-kind event reflecting your authentic identity.</li>
+                <li>
+                  <strong class="feature-label">Surprising Details:</strong>
+                  <span class="feature-text">Exclusive decor atmosphere and refined touches to enchant.</span>
+                </li>
+                <li>
+                  <strong class="feature-label">Exclusive Attention:</strong>
+                  <span class="feature-text">Full dedicated attention to every subtle nuance of your event.</span>
+                </li>
+                <li>
+                  <strong class="feature-label">Signature Experiences:</strong>
+                  <span class="feature-text">A tailor-made celebration genuinely reflecting your identity.</span>
+                </li>
               </ul>
             </div>
           </article>
@@ -512,9 +541,18 @@
                 Complementary event services and flexible advisory to elevate your celebration beyond the ordinary.
               </p>
               <ul class="service-features" aria-label="Features included in Milano package">
-                <li><strong>Hospitality &amp; Guest Care</strong>: Warm welcome, guest support, and active R.S.V.P. management.</li>
-                <li><strong>Production &amp; Logistics</strong>: Precise timing, vendor setup supervision, and seamless logistics.</li>
-                <li><strong>Bespoke Enhancements</strong>: Targeted high-standard solutions tailored to your event.</li>
+                <li>
+                  <strong class="feature-label">Hospitality &amp; Guest Care:</strong>
+                  <span class="feature-text">Warm guest reception and active R.S.V.P. management.</span>
+                </li>
+                <li>
+                  <strong class="feature-label">Production &amp; Logistics:</strong>
+                  <span class="feature-text">Assertive schedule, agile setup, and meticulous oversight.</span>
+                </li>
+                <li>
+                  <strong class="feature-label">Bespoke Enhancements:</strong>
+                  <span class="feature-text">Custom solutions crafted with authenticity and top standards.</span>
+                </li>
               </ul>
             </div>
           </article>
@@ -648,10 +686,10 @@
           </button>
         </article>
 
-        <article class="gallery-item gallery-item--tall" id="gallery-item-2">
+        <article class="gallery-item" id="gallery-item-2">
           <button class="gallery-item-btn" aria-label="View celebration 2 in larger view" data-index="1">
             <img src="../assets/decoracao-2.jpeg" alt="Floral arrangement and atmospheric decoration for an evening celebration in Brasília"
-              class="gallery-img" loading="lazy" width="600" height="800" />
+              class="gallery-img" loading="lazy" width="600" height="400" />
             <div class="gallery-overlay" aria-hidden="true"><span class="gallery-zoom-icon">+</span></div>
           </button>
         </article>
@@ -664,10 +702,10 @@
           </button>
         </article>
 
-        <article class="gallery-item gallery-item--wide" id="gallery-item-4">
+        <article class="gallery-item" id="gallery-item-4">
           <button class="gallery-item-btn" aria-label="View celebration 4 in larger view" data-index="3">
             <img src="../assets/decoracao-4.jpeg" alt="Lighting and welcoming ambient design for a corporate reception in Brasília DF"
-              class="gallery-img" loading="lazy" width="1200" height="400" />
+              class="gallery-img" loading="lazy" width="600" height="400" />
             <div class="gallery-overlay" aria-hidden="true"><span class="gallery-zoom-icon">+</span></div>
           </button>
         </article>
@@ -680,17 +718,9 @@
           </button>
         </article>
 
-        <article class="gallery-item gallery-item--tall" id="gallery-item-6">
+        <article class="gallery-item" id="gallery-item-6">
           <button class="gallery-item-btn" aria-label="View celebration 6 in larger view" data-index="5">
             <img src="../assets/decoracao-6.jpeg" alt="Hanging floral arrangement and reception space decoration in Brasília"
-              class="gallery-img" loading="lazy" width="600" height="800" />
-            <div class="gallery-overlay" aria-hidden="true"><span class="gallery-zoom-icon">+</span></div>
-          </button>
-        </article>
-
-        <article class="gallery-item" id="gallery-item-7">
-          <button class="gallery-item-btn" aria-label="View celebration 7 in larger view" data-index="6">
-            <img src="../assets/decoracao-7.jpeg" alt="Intimate lounge and cozy celebration setting in Brasília DF"
               class="gallery-img" loading="lazy" width="600" height="400" />
             <div class="gallery-overlay" aria-hidden="true"><span class="gallery-zoom-icon">+</span></div>
           </button>
@@ -725,7 +755,7 @@
         <div class="section-header">
           <p class="section-eyebrow">FAQ</p>
           <h2 id="faq-titulo" class="section-title">
-            FAQ — Frequently Asked Questions
+            Frequently Asked Questions
           </h2>
         </div>
 
@@ -824,8 +854,7 @@
           <article class="coverage-card">
             <div class="coverage-card-header">
               <span class="coverage-card-icon" aria-hidden="true">✦</span>
-              <span class="coverage-card-num">CARD 01</span>
-              <h3 class="coverage-card-title">Brasília</h3>
+              <h3 class="coverage-card-title"><span class="coverage-card-num">01 · </span>Brasília</h3>
             </div>
             <p>Plano Piloto (Asa Sul/Norte), Lago Sul, Lago Norte, Sudoeste, Noroeste, Cruzeiro, Octogonal, Park Way, Jardim Botânico, and Setor de Clubes.</p>
           </article>
@@ -833,8 +862,7 @@
           <article class="coverage-card">
             <div class="coverage-card-header">
               <span class="coverage-card-icon" aria-hidden="true">✦</span>
-              <span class="coverage-card-num">CARD 02</span>
-              <h3 class="coverage-card-title">Federal District</h3>
+              <h3 class="coverage-card-title"><span class="coverage-card-num">02 · </span>Federal District</h3>
             </div>
             <p>Águas Claras, Vicente Pires, Guará, Taguatinga, Samambaia, Riacho Fundo, Sobradinho, Gama, Planaltina, Santa Maria, and Ceilândia.</p>
           </article>
@@ -842,8 +870,7 @@
           <article class="coverage-card">
             <div class="coverage-card-header">
               <span class="coverage-card-icon" aria-hidden="true">✦</span>
-              <span class="coverage-card-num">CARD 03</span>
-              <h3 class="coverage-card-title">Surrounding Region (RIDE)</h3>
+              <h3 class="coverage-card-title"><span class="coverage-card-num">03 · </span>Surrounding Region (RIDE)</h3>
             </div>
             <p>Valparaíso, Luziânia, Cidade Ocidental, Novo Gama, Águas Lindas, Formosa, Santo Antônio do Descoberto, and Planaltina de Goiás.</p>
           </article>

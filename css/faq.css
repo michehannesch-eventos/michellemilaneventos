@@ -58,7 +58,9 @@
 .section-faq .container {
   position: relative;
   z-index: 1;
-  max-width: 760px; /* FAQ mais estreito para melhor leitura */
+  max-width: 860px; /* FAQ contido no desktop */
+  margin-inline: auto;
+  width: 100%;
 }
 
 /* ----------------------------------------------------------------
@@ -68,7 +70,9 @@
   display: flex;
   flex-direction: column;
   gap: 0;
-  margin-bottom: var(--space-16);
+  max-width: 860px;
+  margin: 0 auto var(--space-16) auto;
+  width: 100%;
 }
 
 /* ----------------------------------------------------------------
@@ -158,19 +162,29 @@
 }
 
 /* ----------------------------------------------------------------
-   5. ÍCONE ANIMADO (+/×)
+   5. ÍCONE ANIMADO (+ / -)
    ---------------------------------------------------------------- */
 .faq-icon {
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  background: rgba(201, 168, 76, 0.06);
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: border-color var(--transition-base), background-color var(--transition-base);
 }
 
-/* Barra horizontal */
+.faq-question:hover .faq-icon,
+.faq-item[open] .faq-icon {
+  border-color: var(--color-gold);
+  background: rgba(201, 168, 76, 0.16);
+}
+
+/* Barras do ícone */
 .faq-icon::before,
 .faq-icon::after {
   content: '';
@@ -182,25 +196,22 @@
     opacity var(--transition-base);
 }
 
-/* Horizontal */
+/* Barra horizontal (-) */
 .faq-icon::before {
-  width: 16px;
-  height: 1px;
+  width: 12px;
+  height: 2px;
 }
 
-/* Vertical */
+/* Barra vertical (|) */
 .faq-icon::after {
-  width: 1px;
-  height: 16px;
+  width: 2px;
+  height: 12px;
 }
 
-/* Estado aberto: transforma em × */
-.faq-item[open] .faq-icon::before {
-  transform: rotate(45deg);
-}
-
+/* Estado aberto: barra vertical rotaciona 90deg e desaparece, formando o sinal de menos (-) */
 .faq-item[open] .faq-icon::after {
-  transform: rotate(45deg);
+  transform: rotate(90deg);
+  opacity: 0;
 }
 
 /* ----------------------------------------------------------------
@@ -298,9 +309,10 @@
     padding-block: var(--space-32);
   }
 
-  /* No desktop o container já tem max-width: 760px, mantém centralizado */
+  /* No desktop o container tem max-width: 860px, mantém perfeitamente contido e centralizado */
   .section-faq .container {
-    margin-inline: auto;
+    max-width: 860px;
+    margin: 0 auto;
   }
 
   .faq-question:hover {

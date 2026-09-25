@@ -189,6 +189,19 @@
 
 .about-content .section-title {
   margin-bottom: 0;
+  line-height: 1.15;
+}
+
+.section-title-sub {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-gold);
+  margin-top: 0.35rem;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
 }
 
 /* Divisor dourado */
@@ -424,7 +437,7 @@
 .service-features {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-3);
   list-style: none;
   padding: 0;
   margin-top: var(--space-2);
@@ -433,30 +446,48 @@
 }
 
 .service-features li {
-  font-family: var(--font-sans);
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-regular);
-  color: var(--color-text-muted);
-  letter-spacing: 0.04em;
+  position: relative;
+  padding-left: 1.25rem;
   display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  transition: color var(--transition-base);
-  line-height: 1.5;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: left;
 }
 
 /* Check mark dourado */
 .service-features li::before {
   content: '✦';
-  font-size: 0.5rem;
-  color: var(--color-gold);
-  opacity: 0.6;
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  font-size: 0.52rem;
+  color: var(--color-gold, #c5a059);
+  opacity: 0.75;
   flex-shrink: 0;
   transition: opacity var(--transition-base);
 }
 
-.service-card:hover .service-features li {
-  color: var(--color-text-secondary);
+.feature-label {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs, 0.75rem);
+  font-weight: var(--fw-semibold, 600);
+  color: var(--color-gold, #c5a059);
+  letter-spacing: 0.03em;
+  display: inline-block;
+  line-height: 1.35;
+}
+
+.feature-text {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: var(--fw-regular, 400);
+  color: var(--color-text-secondary, #b8b3a8);
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+}
+
+.service-card:hover .service-features li .feature-text {
+  color: #dcd8cf;
 }
 
 .service-card:hover .service-features li::before {
@@ -687,22 +718,23 @@
   .coverage-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    align-items: stretch;
   }
 }
 
 .coverage-card-num {
   font-family: var(--font-sans);
-  font-size: 0.65rem;
+  font-size: 1rem;
   font-weight: var(--fw-semibold, 600);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: var(--color-gold);
-  opacity: 0.75;
+  opacity: 0.95;
 }
 
 /* Cards com Glassmorphism refinado, bordas douradas e sombras atmosféricas */
 .coverage-card {
   position: relative;
+  height: 100%;
   background: linear-gradient(
     145deg,
     rgba(255, 255, 255, 0.035) 0%,
