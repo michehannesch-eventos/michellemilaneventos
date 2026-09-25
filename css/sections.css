@@ -297,6 +297,29 @@
   pointer-events: none;
 }
 
+/* Cabeçalho Editorial dos Serviços */
+.section-lead-tagline {
+  font-family: var(--font-heading, var(--font-serif));
+  font-size: clamp(0.85rem, 2.2vw, 1.05rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold, #c5a059);
+  margin: 0 auto 0.75rem auto;
+  max-width: 680px;
+  line-height: 1.4;
+  opacity: 0.95;
+  text-align: center;
+}
+
+.section-services .section-subtitle {
+  font-size: clamp(0.92rem, 2.4vw, 1.05rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 /* ----------------------------------------------------------------
    5. GRID DOS CARDS
    ---------------------------------------------------------------- */
