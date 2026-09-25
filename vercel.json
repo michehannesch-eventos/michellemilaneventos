@@ -1,6 +1,33 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/portfolio",
+      "destination": "/#portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio/",
+      "destination": "/#portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio.html",
+      "destination": "/#portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/en/portfolio",
+      "destination": "/en/#portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/en/portfolio/",
+      "destination": "/en/#portfolio",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(assets|css|js)/(.*)",
