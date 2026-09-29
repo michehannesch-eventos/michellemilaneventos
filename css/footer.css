@@ -363,3 +363,30 @@
     padding-top: var(--space-24);
   }
 }
+
+/* ----------------------------------------------------------------
+   9. LGPD — Aviso de Privacidade e Proteção de Dados
+   ---------------------------------------------------------------- */
+.footer-privacy-notice {
+  border-top: 1px solid rgba(201, 168, 76, 0.08);
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-2);
+  max-width: 800px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.footer-privacy-notice p {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: var(--fw-light);
+  color: rgba(184, 179, 168, 0.65);
+  line-height: 1.65;
+  letter-spacing: 0.02em;
+}
+
+.footer-privacy-notice strong {
+  font-weight: var(--fw-semibold);
+  color: rgba(201, 168, 76, 0.55);
+}

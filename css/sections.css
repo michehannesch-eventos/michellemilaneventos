@@ -610,7 +610,11 @@
 }
 
 .service-card--dark .service-features li::before {
-  color: var(--color-nude);
+  color: var(--color-gold);
+}
+
+.service-card--dark .feature-label {
+  color: var(--color-gold, #c5a059);
 }
 
 /* ----------------------------------------------------------------
