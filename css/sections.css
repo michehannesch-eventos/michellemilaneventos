@@ -436,6 +436,7 @@
   letter-spacing: 0.04em;
   line-height: 1.1;
   margin-block: 0;
+  text-transform: uppercase;
 }
 
 /* Divisor interno */
@@ -498,10 +499,11 @@
 
 .feature-label {
   font-family: var(--font-sans);
-  font-size: var(--fs-xs, 0.75rem);
-  font-weight: var(--fw-semibold, 600);
-  color: var(--color-gold, #c5a059);
-  letter-spacing: 0.03em;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   display: inline-block;
   line-height: 1.35;
 }
@@ -510,13 +512,13 @@
   font-family: var(--font-sans);
   font-size: 0.78rem;
   font-weight: var(--fw-regular, 400);
-  color: var(--color-text-secondary, #b8b3a8);
+  color: rgba(255, 255, 255, 0.82);
   line-height: 1.45;
   letter-spacing: 0.01em;
 }
 
 .service-card:hover .service-features li .feature-text {
-  color: #dcd8cf;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .service-card:hover .service-features li::before {
@@ -527,12 +529,7 @@
    7. CARD DESTAQUE — Venezia (Mais Popular)
    ---------------------------------------------------------------- */
 .service-card--featured {
-  background: linear-gradient(
-    160deg,
-    rgba(201, 168, 76, 0.10) 0%,
-    var(--color-surface-2) 40%,
-    var(--color-surface-1) 100%
-  );
+  background: var(--color-surface-1);
   border-color: rgba(201, 168, 76, 0.30);
   box-shadow: var(--shadow-gold-sm);
 }
@@ -544,7 +541,9 @@
 
 .service-card--featured:hover {
   border-color: rgba(201, 168, 76, 0.50);
-  box-shadow: var(--shadow-gold-md);
+  box-shadow:
+    var(--shadow-dark-md),
+    var(--shadow-gold-md);
 }
 
 /* Badge "Mais Popular" */
@@ -568,8 +567,8 @@
 }
 
 .service-card--featured .service-icon {
-  background: rgba(201, 168, 76, 0.15);
-  border-color: rgba(201, 168, 76, 0.35);
+  background: rgba(201, 168, 76, 0.12);
+  border-color: rgba(201, 168, 76, 0.30);
 }
 
 .service-card--featured .service-divider {
@@ -580,33 +579,33 @@
    8. CARD DARK — Milano (Exclusivo)
    ---------------------------------------------------------------- */
 .service-card--dark {
-  background: var(--color-dark-deep);
+  background: var(--color-surface-1);
   border-color: var(--color-dark-border);
 }
 
 .service-card--dark .service-tag {
-  color: var(--color-nude);
+  color: var(--color-gold);
 }
 
 .service-card--dark .service-icon {
-  background: rgba(212, 184, 150, 0.08);
-  border-color: rgba(212, 184, 150, 0.15);
-  color: var(--color-nude);
+  background: rgba(201, 168, 76, 0.08);
+  border-color: rgba(201, 168, 76, 0.15);
+  color: var(--color-gold);
 }
 
 .service-card--dark::before {
-  background: linear-gradient(135deg, var(--color-nude-dark), var(--color-nude));
+  background: var(--gradient-gold);
 }
 
 .service-card--dark:hover {
-  border-color: rgba(212, 184, 150, 0.30);
+  border-color: rgba(201, 168, 76, 0.35);
   box-shadow:
-    var(--shadow-dark-sm),
-    0 4px 24px rgba(212, 184, 150, 0.10);
+    var(--shadow-dark-md),
+    var(--shadow-gold-sm);
 }
 
 .service-card--dark .service-divider {
-  background: linear-gradient(135deg, var(--color-nude-dark), var(--color-nude));
+  background: var(--gradient-gold);
 }
 
 .service-card--dark .service-features li::before {
@@ -614,7 +613,7 @@
 }
 
 .service-card--dark .feature-label {
-  color: var(--color-gold, #c5a059);
+  color: var(--color-gold);
 }
 
 /* ----------------------------------------------------------------
@@ -998,6 +997,7 @@
   color: var(--color-text-primary);
   line-height: 1.2;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .segment-description {
